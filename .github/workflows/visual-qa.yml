@@ -67,7 +67,9 @@ jobs:
 
       - name: 安装 QA 依赖（不装浏览器，用容器预装）
         working-directory: qa
-        run: npm ci
+        # 用 npm install 而非 npm ci：容忍跨平台可选依赖（如 fsevents 仅 macOS）
+        # 在 Linux 容器里的锁文件严格校验差异。
+        run: npm install --no-audit --no-fund
 
       - name: 视觉回归对比（或按需重写基准）
         working-directory: qa
