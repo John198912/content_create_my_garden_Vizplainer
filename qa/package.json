@@ -1,0 +1,17 @@
+{
+  "name": "web-video-presentation-qa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "设计基准自动化 QA：静态 token 检查 + 核心 v2 模板视觉回归。",
+  "scripts": {
+    "check:tokens": "node check-design-tokens.mjs",
+    "check:tokens:quiet": "node check-design-tokens.mjs --quiet",
+    "test:visual": "playwright test --config playwright.config.mjs",
+    "test:visual:update": "playwright test --config playwright.config.mjs --update-snapshots",
+    "qa": "npm run check:tokens && npm run test:visual"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.0"
+  }
+}

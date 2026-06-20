@@ -1,0 +1,6 @@
+node_modules/
+test-results/
+playwright-report/
+# fixture/tokens.css 提交一份默认（newsroom-v2）让 fixture 可独立打开；
+#   跨测时会被逐个主题覆写，不忽略。
+# __snapshots__/ 是基准，必须提交，不忽略。

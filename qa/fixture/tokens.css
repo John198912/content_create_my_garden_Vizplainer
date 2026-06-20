@@ -1,0 +1,68 @@
+/* tokens.css — 主题 'viz-studio'(由 scaffold 从 all-themes.css 展开)
+ * 切换主题:重新跑 scaffold 的展开,或手动把另一主题的 [data-theme] 块改成 :root。
+ * 不要手改这里的值表达主题性格 —— 回 themes/all-themes.css 改源,再重新展开。 */
+:root {
+  /* ─── palette (pure black studio) ─── */
+  --shell:        #000000;
+  --surface:      #0b0b0e;
+  --surface-2:    #141419;
+  --surface-3:    #1f1f27;
+  --text:         #f4f4f6;
+  --text-2:       #c4c4cf;
+  --text-mute:    #7e7e8c;
+  --text-faint:   #4d4d59;
+  --text-ghost:   rgba(244, 244, 246, 0.12);   /* explicit ghost for clean read on pure black */
+  --rule:         #26262f;
+  --accent:       #6366f1;              /* indigo (single saturated lead) */
+  --accent-soft:  rgba(99, 102, 241, 0.14);
+  --accent-glow:  rgba(99, 102, 241, 0.50);
+  --accent-2:     #a855f7;              /* adjacent violet — gradient/glow partner ONLY */
+
+  /* ─── fonts ─── */
+  --font-display-cn: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-display-en: "Space Grotesk", "Inter", "Helvetica Neue", sans-serif;
+  --font-body:       "Inter", "Noto Sans SC", -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-features:   "tnum", "ss01", "ss02";
+
+  /* ─── motion: crisp but smooth (cinematic ease-out, no bounce) ─── */
+  --dur-quick:     200ms;
+  --dur-base:      460ms;
+  --dur-slow:      720ms;
+  --dur-cinematic: 1100ms;
+  --ease-quart:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo:      cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft:      cubic-bezier(0.4, 0, 0.1, 1);
+  --ease-overshoot: cubic-bezier(0.34, 1.4, 0.5, 1);   /* gentle, not springy */
+
+  /* ─── v2 motion hooks (restrained glow — studio, not neon) ─── */
+  --cascade-step:   80ms;
+  --cascade-rise:   16px;
+  --glow-strength:  0.22;
+  --orb-opacity:    0.06;
+  --card-glass-bg:      rgba(20, 20, 25, 0.66);
+  --card-glass-border:  rgba(255, 255, 255, 0.08);
+
+  /* ─── design identity: soft-modern studio ─── */
+  --r-card:        var(--r-md);
+  --r-stage:       0;
+  --rule-w:        1px;
+  --rule-style:    solid;
+  --hero-num-font:    var(--font-display-en);
+  --hero-num-style:   normal;
+  --hero-num-weight:  600;
+  --hero-num-track:   -0.03em;
+  --stage-pad-x:   104px;
+  --stage-pad-y:   84px;
+  --text-shadow:   0 0 16px rgba(99, 102, 241, 0.18);
+  --card-shadow:
+    inset 0 0 0 1px var(--rule),
+    0 0 48px rgba(99, 102, 241, 0.05);
+  --shadow-stage:
+    0 60px 160px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  /* ─── decoration: faint radial spotlight from top (studio key light) ─── */
+  --surface-vignette:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99, 102, 241, 0.07), transparent 70%);
+}

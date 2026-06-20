@@ -1,0 +1,12 @@
+# Node / Playwright 运行产物
+**/node_modules/
+qa/test-results/
+qa/playwright-report/
+
+# Vite/脚手架产物
+**/dist/
+**/.vite/
+
+# 系统/编辑器
+.DS_Store
+*.log

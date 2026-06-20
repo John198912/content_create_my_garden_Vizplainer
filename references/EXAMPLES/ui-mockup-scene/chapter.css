@@ -1,0 +1,107 @@
+/* ui-mockup-scene · chapter.css (C1 anchor)
+ * 章节专属前缀 .um-。颜色 / 字体 / 圆角全走 token，换主题不破。
+ * .window-frame / .carousel-slide / .status-dot / .hero-num 都是
+ * 全局原语（base.css + animations.css 提供），这里只做布局 + 章节专属调味。
+ */
+
+.um-scene {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-7);
+  height: 100%;
+}
+
+.um-head {
+  display: flex;
+  justify-content: center;
+}
+
+/* 窗口本体限宽居中，让它像「一块产品界面」而不是铺满整屏 */
+.um-window {
+  width: min(1100px, 80%);
+  margin: 0 auto;
+}
+
+.wf-bar .um-status {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.um-body {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.um-ghost {
+  text-align: center;
+  max-width: 36ch;
+  color: var(--text-faint);
+}
+
+.um-slide {
+  width: 100%;
+}
+
+.um-slide-tag {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  /* accent 只在 UI 状态标签里满格出现 —— 文字层不抢色 */
+  color: var(--accent);
+}
+.um-slide-ok {
+  /* 完成态用 accent-2（如主题有），否则回落 accent */
+  color: var(--accent-2, var(--accent));
+}
+
+.um-code {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-2);
+  white-space: pre;
+  margin: 0;
+}
+
+/* 处理中的进度条：accent 满格扫过 */
+.um-progress {
+  margin-top: var(--space-5);
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.um-progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  animation: um-fill var(--dur-slow) var(--ease-quart) forwards;
+}
+@keyframes um-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.um-result {
+  margin-top: var(--space-5);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+.um-count {
+  font-size: clamp(48px, 5vw, 80px);
+  color: var(--accent-2, var(--accent));
+}
+
+/* live 状态点：呼吸（status-dot 原语已带 is-live keyframe；这里只兜底） */
+.status-dot.is-live { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .um-progress > span { animation: none; transform: scaleX(1); }
+}

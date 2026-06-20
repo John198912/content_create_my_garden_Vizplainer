@@ -1,0 +1,100 @@
+/* comparison-frame · chapter.css (C3 anchor)
+ * 前缀 .cf-。竞品对比表，逐列揭示。颜色 / 字体走 token。
+ */
+
+.cf-scene {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-9);
+  height: 100%;
+}
+
+.cf-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: center;
+  text-align: center;
+}
+.cf-title {
+  font-family: var(--font-display-cn);
+  font-size: clamp(40px, 4vw, 64px);
+  letter-spacing: var(--track-tight);
+  color: var(--text);
+  margin: 0;
+}
+
+.cf-grid {
+  display: grid;
+  /* 行标列 + 3 竞品列 */
+  grid-template-columns: 220px repeat(3, 1fr);
+  gap: var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cf-rowlabels {
+  display: grid;
+  grid-template-rows: 64px repeat(4, 1fr);
+  gap: var(--space-3);
+}
+.cf-rowlabel {
+  display: flex;
+  align-items: center;
+  color: var(--text-mute);
+}
+
+/* 每一竞品列 */
+.cf-col {
+  display: grid;
+  grid-template-rows: 64px repeat(4, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-3);
+  border-radius: var(--r-card);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--dur-base) var(--ease-quart),
+    transform var(--dur-base) var(--ease-quart);
+}
+.cf-col.in { opacity: 1; transform: none; }
+
+/* 对照列：整列灰，退到背景 */
+.cf-col.is-ghost { color: var(--text-faint); }
+.cf-col.is-ghost .cf-colname { color: var(--text-ghost); }
+
+/* 我方列：accent 描边 + 微底，一眼定胜负 */
+.cf-col.is-ours {
+  border: var(--bw-2) solid var(--accent);
+  background: var(--accent-soft);
+}
+.cf-col.is-ours .cf-colname { color: var(--accent); }
+
+.cf-colname {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: var(--track-snug);
+  text-align: center;
+  color: var(--text-2);
+}
+
+.cf-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cf-mark {
+  font-size: 28px;
+  line-height: 1;
+}
+/* ✓ / ✕ 用 token 色，不用 emoji */
+.cf-col.is-ghost .cf-mark.yes { color: var(--text-mute); }
+.cf-col.is-ghost .cf-mark.no  { color: var(--text-ghost); }
+.cf-col.is-ours  .cf-mark.yes { color: var(--accent); }
+.cf-col.is-ours  .cf-mark.no  { color: var(--text-faint); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-col { transition-duration: 1ms; transform: none; }
+}

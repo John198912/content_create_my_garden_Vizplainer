@@ -1,0 +1,97 @@
+name: 设计基准 QA（动效原语 + v2 模板视觉回归）
+
+# 守护目标：任何主题/样式改动若让 12 个通用动效原语、字体梯度、强调色预算
+# 偏离 qa/design-baseline.json 的设计基准，或让核心 v2 模板布局快照漂移，
+# 即 FAIL。每周一定时自动跑，也在改动相关文件的 PR/push 上跑。
+
+on:
+  schedule:
+    # 每周一 01:00 UTC（北京时间周一 09:00）跑视觉回归基线巡检
+    - cron: '0 1 * * 1'
+  push:
+    branches: [main, master]
+    paths:
+      - 'templates/src/styles/**'
+      - 'themes/**'
+      - 'references/EXAMPLES/comparison-frame/**'
+      - 'qa/**'
+      - '.github/workflows/visual-qa.yml'
+  pull_request:
+    paths:
+      - 'templates/src/styles/**'
+      - 'themes/**'
+      - 'references/EXAMPLES/comparison-frame/**'
+      - 'qa/**'
+      - '.github/workflows/visual-qa.yml'
+  workflow_dispatch:
+    inputs:
+      update_snapshots:
+        description: '重写视觉回归基准快照（仅在设计基准有意变更时勾选）'
+        type: boolean
+        default: false
+
+# 取消同分支上仍在跑的旧任务
+concurrency:
+  group: visual-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ───────────── Job 1：静态设计基准断言（无需浏览器，秒级）─────────────
+  token-baseline:
+    name: 静态设计基准断言
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 跑 check-design-tokens.mjs
+        run: node qa/check-design-tokens.mjs
+
+  # ───────────── Job 2：核心 v2 模板视觉回归 ─────────────
+  # 跑在官方 Playwright 容器里，渲染环境与基准生成环境一致 → 跨机抗锯齿不误报。
+  # ⚠ 容器版本须与 qa/package.json 的 @playwright/test 版本对齐。
+  visual-regression:
+    name: v2 模板布局快照回归
+    runs-on: ubuntu-latest
+    needs: token-baseline
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.0-noble
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 QA 依赖
+        working-directory: qa
+        run: npm ci || npm install --no-audit --no-fund
+
+      - name: 视觉回归对比（或按需重写基准）
+        working-directory: qa
+        env:
+          UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.update_snapshots == true }}
+        run: |
+          if [ "$UPDATE" = "true" ]; then
+            echo "::notice::按手动触发重写视觉回归基准快照"
+            npx playwright test --config playwright.config.mjs --update-snapshots
+          else
+            npx playwright test --config playwright.config.mjs
+          fi
+
+      # 失败时上传 diff / actual / expected 三联图，便于人工核查是哪条原语漂了
+      - name: 上传视觉 diff 工件（失败时）
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diff-${{ github.run_id }}
+          path: |
+            qa/test-results/**
+            qa/playwright-report/**
+          retention-days: 14
+
+      # 手动重写基准后，把更新的快照作为工件产出，供维护者下载提交
+      - name: 上传更新后的基准快照（手动重写时）
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.update_snapshots == true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-snapshots-${{ github.run_id }}
+          path: qa/__snapshots__/**
+          retention-days: 14

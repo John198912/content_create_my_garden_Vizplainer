@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动效原语视觉回归 fixture</title>
+
+  <!-- ── 设计基准 CSS（与脚手架生产一致的导入顺序）──
+       tokens.css 由 visual-regression.mjs 在跑测前写入当前主题的 :root tokens。
+       fonts → tokens(active theme) → base → animations -->
+  <link rel="stylesheet" href="../../templates/src/styles/fonts.css" />
+  <link rel="stylesheet" href="./tokens.css" />
+  <link rel="stylesheet" href="../../templates/src/styles/base.css" />
+  <link rel="stylesheet" href="../../templates/src/styles/animations.css" />
+
+  <style>
+    /* fixture-only 布局壳；不引入任何颜色/动效，纯靠 token 与原语驱动 */
+    html, body { margin: 0; background: var(--bg, var(--surface)); }
+    .vr-stage {
+      width: 1280px;
+      min-height: 760px;
+      box-sizing: border-box;
+      padding: 40px 48px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font-body, system-ui);
+    }
+    .vr-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+    .vr-theme-name { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+    .vr-theme-id { font-size: 13px; color: var(--text-mute); }
+    .vr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .vr-cell {
+      border: 1px solid var(--hairline, color-mix(in srgb, var(--text) 12%, transparent));
+      border-radius: 10px;
+      padding: 16px;
+      position: relative;
+      min-height: 132px;
+    }
+    .vr-cell h4 { margin: 0 0 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-mute); }
+    /* 文字梯度 5 档展示，用于字体梯度回归 */
+    .vr-rung { display: block; font-size: 16px; line-height: 1.5; }
+    .r1 { color: var(--text); }
+    .r2 { color: var(--text-2); }
+    .r3 { color: var(--text-mute); }
+    .r4 { color: var(--text-faint); }
+    .r5 { color: var(--text-ghost); }
+    /* cascade demo 子项 */
+    .vr-line { padding: 6px 10px; margin-bottom: 6px; background: var(--accent-soft); border-radius: 6px; font-size: 14px; }
+    .vr-card-inner { font-size: 14px; }
+    .vr-card-inner b { color: var(--accent); }
+    .vr-dot-row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+    .vr-tab { display: inline-block; padding-bottom: 6px; font-size: 14px; }
+    .vr-num { font-size: 40px; font-weight: 800; color: var(--accent); }
+    .wf-body p { margin: 0; font-size: 13px; color: var(--text-2); }
+    .wf-body code { color: var(--accent); }
+    /* accent-2 渐变伙伴展示 */
+    .vr-grad { height: 28px; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+  </style>
+</head>
+<body>
+  <!-- data-theme 由测试脚本写入，给依赖 [data-theme] 的 token 兜底；tokens.css 已注入 :root -->
+  <div class="vr-stage" id="stage" data-theme="">
+    <div class="vr-head">
+      <span class="vr-theme-name" id="themeName">Theme</span>
+      <span class="vr-theme-id" id="themeId">id</span>
+    </div>
+
+    <!-- ambient-orbs 作为整舞台氛围底（克制度由 --orb-opacity 决定） -->
+    <div class="ambient-orbs" style="position:absolute; inset:0; pointer-events:none;"></div>
+
+    <div class="vr-grid">
+      <!-- 1. cascade（级联淡入，靠 .in 终态截图，测 step/rise 落点） -->
+      <div class="vr-cell">
+        <h4>cascade</h4>
+        <div class="cascade in">
+          <div class="vr-line" style="--i:0">级联项 01</div>
+          <div class="vr-line" style="--i:1">级联项 02</div>
+          <div class="vr-line" style="--i:2">级联项 03</div>
+        </div>
+      </div>
+
+      <!-- 2. rise-step -->
+      <div class="vr-cell">
+        <h4>rise-step</h4>
+        <div class="rise-step in"><div class="vr-card-inner">单块上推入场 <b>已落位</b></div></div>
+      </div>
+
+      <!-- 3. glow-card（辉光强度，靠 --glow-strength） -->
+      <div class="vr-cell">
+        <h4>glow-card</h4>
+        <div class="glow-card in" style="padding:14px;border-radius:8px;">
+          <div class="vr-card-inner">辉光卡 <b>强度看主题</b></div>
+        </div>
+      </div>
+
+      <!-- 4. 文字梯度 5 档（字体梯度回归核心） -->
+      <div class="vr-cell">
+        <h4>text gradient</h4>
+        <span class="vr-rung r1">档1 --text 正文</span>
+        <span class="vr-rung r2">档2 --text-2 次级</span>
+        <span class="vr-rung r3">档3 --text-mute 弱化</span>
+        <span class="vr-rung r4">档4 --text-faint 极弱</span>
+        <span class="vr-rung r5">档5 --text-ghost 幽灵</span>
+      </div>
+
+      <!-- 5. accordion-row（展开终态） -->
+      <div class="vr-cell">
+        <h4>accordion-row</h4>
+        <div class="accordion-row in"><div><div class="vr-card-inner">手风琴已展开内容行</div></div></div>
+      </div>
+
+      <!-- 6. tab-underline（下划线终态） + status-dot + spinner + typing-dots -->
+      <div class="vr-cell">
+        <h4>tabs / status / spin / typing</h4>
+        <span class="vr-tab tab-underline in" style="--tab-color:var(--accent)">当前标签</span>
+        <div class="vr-dot-row" style="margin-top:12px">
+          <span class="status-dot" style="--status-color:var(--accent)"></span> 在线
+          <span class="spinner" style="--spinner-size:18px"></span>
+          <span class="typing-dots"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+
+      <!-- 7. carousel-slide（激活态） -->
+      <div class="vr-cell">
+        <h4>carousel-slide</h4>
+        <div style="position:relative;height:60px;">
+          <div class="carousel-slide is-active"><div class="vr-card-inner">激活幻灯片</div></div>
+        </div>
+      </div>
+
+      <!-- 8. count-up（等宽数字） -->
+      <div class="vr-cell">
+        <h4>count-up</h4>
+        <span class="count-up vr-num">128,640</span>
+      </div>
+
+      <!-- 9. window-frame（拟物 UI 容器，§13 新原语） -->
+      <div class="vr-cell">
+        <h4>window-frame</h4>
+        <div class="window-frame is-mac in">
+          <div class="wf-bar"><span class="wf-dots"></span><span class="wf-title">pipeline.py</span></div>
+          <div class="wf-body"><p><code>render()</code> → 终态布局</p></div>
+        </div>
+      </div>
+
+      <!-- 10. shimmer（扫光，循环，截图取某帧；layout 不变即可） -->
+      <div class="vr-cell">
+        <h4>shimmer</h4>
+        <div class="shimmer" style="height:40px;border-radius:6px;background:var(--accent-soft);"></div>
+      </div>
+
+      <!-- 11. accent-2 渐变伙伴（强调色预算） -->
+      <div class="vr-cell">
+        <h4>accent + accent-2 gradient</h4>
+        <div class="vr-grad"></div>
+      </div>
+
+      <!-- 12. sys-label / human-note 语义 mono（A4） -->
+      <div class="vr-cell">
+        <h4>sys-label / human-note</h4>
+        <div class="sys-label">SYSTEM · 2026-06-21</div>
+        <div class="human-note">— 手写旁注气质</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 测试脚本通过 ?theme=<id>&name=<nameZh> 传入，渲染到标题，并打上 data-theme。
+    const p = new URLSearchParams(location.search);
+    const id = p.get('theme') || '';
+    const name = p.get('name') || id;
+    document.getElementById('themeId').textContent = id;
+    document.getElementById('themeName').textContent = name;
+    document.documentElement.setAttribute('data-theme', id);
+    document.getElementById('stage').setAttribute('data-theme', id);
+  </script>
+</body>
+</html>

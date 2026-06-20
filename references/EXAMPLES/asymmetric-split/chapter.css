@@ -1,0 +1,92 @@
+/* asymmetric-split · chapter.css (C2 anchor)
+ * 前缀 .as-。33% / 67% 非对称分屏。颜色 / 字体走 token。
+ */
+
+.as-scene {
+  display: grid;
+  grid-template-columns: 33fr 67fr;   /* 非对称：左窄右宽 */
+  gap: var(--space-9);
+  align-items: center;
+  height: 100%;
+}
+
+/* ── 左列：低密度文字 ── */
+.as-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.as-tag { color: var(--text-mute); }
+.as-claim {
+  font-family: var(--font-display-cn);
+  font-size: clamp(40px, 4vw, 64px);
+  line-height: 1.15;
+  letter-spacing: var(--track-tight);
+  color: var(--text);
+  margin: 0;
+}
+.as-em { color: var(--accent); }          /* accent 只点一个词 */
+.as-note { max-width: 26ch; color: var(--text-2); }
+
+/* ── 右栏：高密度视觉 ── */
+.as-right {
+  display: flex;
+  align-items: center;
+}
+.as-window { width: 100%; }
+
+.as-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding-block: var(--space-5);
+}
+
+.as-bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 90px;
+  align-items: center;
+  gap: var(--space-4);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition:
+    opacity var(--dur-base) var(--ease-quart),
+    transform var(--dur-base) var(--ease-quart);
+}
+.as-bar-row.in { opacity: 1; transform: none; }
+
+.as-bar-label { color: var(--text-mute); }
+
+.as-bar-track {
+  height: 28px;
+  border-radius: var(--r-xs);
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.as-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--text-faint);
+  transform-origin: left;
+  animation: as-grow var(--dur-slow) var(--ease-quart) forwards;
+}
+.as-bar-fill.is-dim { background: var(--text-faint); }   /* 对照项灰 */
+.as-bar-fill.is-accent { background: var(--accent); }    /* 赢家满格 accent */
+
+@keyframes as-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.as-bar-val {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text-2);
+  text-align: right;
+}
+.as-bar-val.is-accent { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .as-bar-fill { animation: none; transform: scaleX(1); }
+  .as-bar-row { transition-duration: 1ms; }
+}
