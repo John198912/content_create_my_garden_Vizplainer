@@ -1,142 +1,368 @@
 {
-  "$comment": "设计基准的唯一真相源 (single source of truth)。check-design-tokens.mjs 据此断言。改设计基准时改这里，不要把数字散落在脚本里。所有数值均从 templates/src/styles/*.css 与 themes/all-themes.css 的真实定义提炼。",
-  "version": "1.0.0",
-  "lastSyncedFrom": {
-    "base_css": "templates/src/styles/base.css",
-    "animations_css": "templates/src/styles/animations.css",
-    "themes_css": "themes/all-themes.css"
+ "$comment": "设计基准的唯一真相源 (single source of truth)。check-design-tokens.mjs 据此断言。改设计基准时改这里，不要把数字散落在脚本里。所有数值均从 templates/src/styles/*.css 与 themes/all-themes.css 的真实定义提炼。",
+ "version": "1.0.0",
+ "lastSyncedFrom": {
+  "base_css": "templates/src/styles/base.css",
+  "animations_css": "templates/src/styles/animations.css",
+  "themes_css": "themes/all-themes.css"
+ },
+ "globalTokens": {
+  "$comment": "base.css :root 的全局动效尺度。原语全部消费这些 token，所以它们是基准的根。",
+  "durations": {
+   "--dur-quick": "280ms",
+   "--dur-base": "600ms",
+   "--dur-slow": "900ms",
+   "--dur-cinematic": "1400ms"
   },
-
-  "globalTokens": {
-    "$comment": "base.css :root 的全局动效尺度。原语全部消费这些 token，所以它们是基准的根。",
-    "durations": {
-      "--dur-quick":     "280ms",
-      "--dur-base":      "600ms",
-      "--dur-slow":      "900ms",
-      "--dur-cinematic": "1400ms"
-    },
-    "easings": {
-      "--ease-quart":     "cubic-bezier(0.19, 1, 0.22, 1)",
-      "--ease-expo":      "cubic-bezier(0.86, 0, 0.07, 1)",
-      "--ease-soft":      "cubic-bezier(0.4, 0, 0.1, 1)",
-      "--ease-overshoot": "cubic-bezier(0.34, 1.56, 0.64, 1)"
-    },
-    "textGhost": {
-      "token": "--text-ghost",
-      "expected": "color-mix(in srgb, var(--text) 20%, transparent)",
-      "$comment": "base.css 默认值；主题可用显式 hex/rgba 覆盖（viz-studio 即覆盖）。"
-    }
+  "easings": {
+   "--ease-quart": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "--ease-expo": "cubic-bezier(0.86, 0, 0.07, 1)",
+   "--ease-soft": "cubic-bezier(0.4, 0, 0.1, 1)",
+   "--ease-overshoot": "cubic-bezier(0.34, 1.56, 0.64, 1)"
   },
-
-  "primitives": {
-    "$comment": "12 个通用动效原语 + window-frame 的不变量。脚本断言这些 class 存在且关键属性未漂移。",
-    "required": [
-      ".cascade", ".rise-step", ".glow-card", ".ambient-orbs", ".shimmer",
-      ".accordion-row", ".status-dot", ".spinner", ".typing-dots",
-      ".carousel-slide", ".tab-underline", ".count-up",
-      ".window-frame"
-    ],
-    "stepToggleContract": {
-      "$comment": "这些原语必须靠 .in / .is-active 步进开关驱动（不能默认就播完），保证「一节拍=一step」。",
-      "dotIn": [".cascade.in", ".rise-step.in", ".glow-card.in", ".accordion-row.in", ".tab-underline.in", ".window-frame.in"],
-      "isActive": [".carousel-slide.is-active"]
-    },
-    "loopAnimations": {
-      "$comment": "纯循环装饰原语，允许无 .in（持续微动），但必须出现在 reduced-motion 降级块里。",
-      "members": [".shimmer", ".status-dot", ".spinner", ".typing-dots", ".ambient-orbs"]
-    },
-    "reducedMotionGuard": {
-      "$comment": "prefers-reduced-motion 块必须收住的原语，避免减动用户看到空帧/抽搐。",
-      "mustAppear": [".cascade", ".rise-step", ".window-frame", ".ambient-orbs", ".shimmer", ".status-dot", ".spinner", ".typing-dots"]
-    }
+  "textGhost": {
+   "token": "--text-ghost",
+   "expected": "color-mix(in srgb, var(--text) 20%, transparent)",
+   "$comment": "base.css 默认值；主题可用显式 hex/rgba 覆盖（viz-studio 即覆盖）。"
   },
-
-  "cascadeSpeed": {
-    "$comment": "级联淡入速度阈值。--cascade-step 是每子项错峰延迟；过快=糊成一团，过慢=拖沓。--cascade-rise 是入场上推位移。气质越快(snappy)step 越小，越电影感越大。",
-    "cascadeStep": { "minMs": 50, "maxMs": 140, "$comment": "全主题 --cascade-step 合理区间。低于 50ms 错峰看不出，高于 140ms 拖沓。" },
-    "cascadeRise": { "minPx": 8, "maxPx": 28, "$comment": "上推位移区间。低于 8px 几乎无位移感，高于 28px 入场太跳。" },
-    "perTheme": {
-      "newsroom-v2":    { "--cascade-step": "110ms", "--cascade-rise": "16px" },
-      "bold-signal-v2": { "--cascade-step": "85ms",  "--cascade-rise": "22px" },
-      "swiss-ikb-v2":   { "--cascade-step": "70ms",  "--cascade-rise": "12px" },
-      "viz-studio":     { "--cascade-step": "80ms",  "--cascade-rise": "16px" }
-    },
-    "ordering": {
-      "$comment": "气质排序断言：Swiss 最克制(最快最小) < bold-signal 最有冲击。若某次主题改动打破排序，说明气质漂了。",
-      "stepAscending": ["swiss-ikb-v2", "viz-studio", "bold-signal-v2", "newsroom-v2"]
-    }
-  },
-
-  "glowStrength": {
-    "$comment": "辉光强度阈值。--glow-strength 是 .glow-card 光晕 + 霓虹边强度乘子(0~1)。严肃/浅色主题必须低，霓虹/暗色 pitch 可高。",
-    "range": { "min": 0.0, "max": 0.6, "$comment": "全主题硬上限 0.6——超过就刺眼/AI 味。" },
-    "thresholds": {
-      "restrained":  { "max": 0.20, "$comment": "Swiss / 报刊 / 学术等克制主题不得超过此值。" },
-      "moderate":    { "min": 0.15, "max": 0.30, "$comment": "暗色 studio 类主题：暗底需要稍强光晕才看得见层次，但仍不张扬。" },
-      "expressive":  { "min": 0.40, "$comment": "霓虹 / pitch-deck 旗舰主题应达到此值才有「全场动效标杆」效果。" }
-    },
-    "perTheme": {
-      "newsroom-v2":    0.18,
-      "bold-signal-v2": 0.55,
-      "swiss-ikb-v2":   0.10,
-      "viz-studio":     0.22
-    },
-    "classification": {
-      "$comment": "每主题应落在哪个档。脚本据此断言：restrained ≤0.20，moderate 在 [0.15,0.30]，expressive ≥0.40。viz-studio 是暗色致敬主题，0.22 落 moderate（暗底需稍强光晕）。",
-      "restrained": ["newsroom-v2", "swiss-ikb-v2"],
-      "moderate": ["viz-studio"],
-      "expressive": ["bold-signal-v2"]
-    },
-    "orbOpacity": {
-      "$comment": "--orb-opacity 是 ambient-orbs 呼吸氛围透明度，必须比 glow 更克制。",
-      "range": { "min": 0.03, "max": 0.20 },
-      "perTheme": { "newsroom-v2": 0.06, "bold-signal-v2": 0.16, "swiss-ikb-v2": 0.05, "viz-studio": 0.06 }
-    }
-  },
-
-  "textGradient": {
-    "$comment": "字体/文字梯度基准。5 档文字色必须单调递减(从 --text 到 --text-ghost 越来越淡)。脚本计算每档相对底色的对比度/不透明度并断言严格递减。",
-    "rungs": ["--text", "--text-2", "--text-mute", "--text-faint", "--text-ghost"],
-    "monotonicallyDecreasing": true,
-    "minContrastBodyOnSurface": 4.5,
-    "$comment2": "WCAG: --text 在 --surface 上正文必须 ≥4.5:1。--text-ghost 是背景脚手架档，豁免对比度下限，但必须是最淡的一档。",
-    "perThemeRungs": {
-      "newsroom-v2":    { "--text": "#14110b", "--text-2": "#2a261a", "--text-mute": "#5e564a", "--text-faint": "#8c8473" },
-      "bold-signal-v2": { "--text": "#f5f5f5", "--text-2": "#d8d8d8", "--text-mute": "#8a8a8a", "--text-faint": "#5a5a5a" },
-      "swiss-ikb-v2":   { "--text": "#0a0a0a", "--text-2": "#2a2a2a", "--text-mute": "#737373", "--text-faint": "#a8a8a8" },
-      "viz-studio":     { "--text": "#f4f4f6", "--text-2": "#c4c4cf", "--text-mute": "#7e7e8c", "--text-faint": "#4d4d59", "--text-ghost": "rgba(244, 244, 246, 0.12)" }
-    }
-  },
-
-  "accentBudget": {
-    "$comment": "强调色预算 / 单一饱和色纪律。--accent-2 仅作渐变/光晕伙伴，不当二级品牌色。脚本断言：定义了 --accent-2 的主题必须也定义 --accent；--accent-soft/--accent-glow 必须与 --accent 同色相(透明度叠层)。",
-    "accent2IsGradientPartnerOnly": true,
-    "perThemeAccent2": {
-      "newsroom-v2": "#1f3a5f", "bold-signal-v2": "#d81e88", "swiss-ikb-v2": "#0090c8",
-      "viz-studio": "#a855f7", "neon-cyber": "#ff00aa", "electric-studio": "#6f8cff"
-    }
-  },
-
-  "comparisonFrameNarrative": {
-    "$comment": "对比表叙事格式基准 (Vizplainer #8 签名)。校验 comparison-frame EXAMPLE 骨架遵守叙事铁律。",
-    "examplePath": "references/EXAMPLES/comparison-frame",
-    "rules": [
-      { "id": "standalone-chapter",   "desc": "对比作为独立章节，不埋进正文角落", "mustMention": ["独立章节"] },
-      { "id": "competitor-cols-gray", "desc": "竞品列灰态(--text-faint/--text-ghost)，我方列 accent 高亮", "mustMention": ["--text-ghost", "--text-faint", "accent"] },
-      { "id": "per-column-reveal",    "desc": "逐列揭示，禁一次全亮(每列1step)", "mustMention": ["逐列揭示"], "mustForbidPhrase": ["一次全亮"] },
-      { "id": "char-not-emoji",       "desc": "✓/✕ 用字符不用 emoji", "mustMention": ["✓", "✕"], "forbidEmoji": ["✅", "❌"] },
-      { "id": "narrations-n-plus-1",  "desc": "narrations.ts 必须 N+1 条(N列+1设问)", "mustMention": ["N+1"] }
-    ]
-  },
-
-  "visualRegression": {
-    "$comment": "视觉回归任务配置。每周一对比核心 v2 模板布局快照，确保主题变动不致动效原语/字体梯度偏离基准。",
-    "templates": ["newsroom-v2", "bold-signal-v2", "swiss-ikb-v2", "viz-studio"],
-    "fixtureRoute": "/verify.html",
-    "viewport": { "width": 1280, "height": 760, "deviceScaleFactor": 2 },
-    "settleMs": 2600,
-    "pixelDiffThreshold": 0.1,
-    "maxDiffPixelRatio": 0.012,
-    "$comment2": "settleMs 给入场动效播完时间后再截图(快照测的是 .in 终态布局，不是中间帧)。pixelDiffThreshold=单像素容差，maxDiffPixelRatio=全图允许差异占比(1.2%)，给字体抗锯齿留余量。"
+  "sceneGap": {
+   "$comment": "A2 / Vizplainer Top8 #6「单一节奏单元」。场景内大模块统一纵向间距，默认对齐 --stage-pad-y。",
+   "token": "--scene-gap",
+   "expected": "var(--stage-pad-y)",
+   "variants": [
+    "--scene-gap-tight",
+    "--scene-gap-loose"
+   ]
   }
+ },
+ "primitives": {
+  "$comment": "12 个通用动效原语 + window-frame 的不变量。脚本断言这些 class 存在且关键属性未漂移。",
+  "required": [
+   ".cascade",
+   ".rise-step",
+   ".glow-card",
+   ".ambient-orbs",
+   ".shimmer",
+   ".accordion-row",
+   ".status-dot",
+   ".spinner",
+   ".typing-dots",
+   ".carousel-slide",
+   ".tab-underline",
+   ".count-up",
+   ".window-frame"
+  ],
+  "stepToggleContract": {
+   "$comment": "这些原语必须靠 .in / .is-active 步进开关驱动（不能默认就播完），保证「一节拍=一step」。",
+   "dotIn": [
+    ".cascade.in",
+    ".rise-step.in",
+    ".glow-card.in",
+    ".accordion-row.in",
+    ".tab-underline.in",
+    ".window-frame.in"
+   ],
+   "isActive": [
+    ".carousel-slide.is-active"
+   ]
+  },
+  "loopAnimations": {
+   "$comment": "纯循环装饰原语，允许无 .in（持续微动），但必须出现在 reduced-motion 降级块里。",
+   "members": [
+    ".shimmer",
+    ".status-dot",
+    ".spinner",
+    ".typing-dots",
+    ".ambient-orbs"
+   ]
+  },
+  "reducedMotionGuard": {
+   "$comment": "prefers-reduced-motion 块必须收住的原语，避免减动用户看到空帧/抽搐。",
+   "mustAppear": [
+    ".cascade",
+    ".rise-step",
+    ".window-frame",
+    ".ambient-orbs",
+    ".shimmer",
+    ".status-dot",
+    ".spinner",
+    ".typing-dots"
+   ]
+  }
+ },
+ "motionThemes": {
+  "$comment": "凡在 themes/all-themes.css 里定义了完整动效套件（--cascade-step/--cascade-rise/--glow-strength/--orb-opacity）的主题，都必须列在这里并被静态断言逐项校验。D-2 升级把 neon-cyber/electric-studio 从「半套（仅 accent-2）」补成完整套件并纳入校验。",
+  "themes": [
+   "newsroom-v2",
+   "bold-signal-v2",
+   "swiss-ikb-v2",
+   "viz-studio",
+   "neon-cyber",
+   "electric-studio"
+  ],
+  "coveredThemesRule": "凡 CSS 主题块内定义了 --cascade-step 的主题，必须出现在本列表且出现在 cascadeSpeed.perTheme / glowStrength.perTheme / glowStrength.orbOpacity.perTheme 中——否则视为基准漏覆盖（O-4 强制断言）。"
+ },
+ "cascadeSpeed": {
+  "$comment": "级联淡入速度阈值。--cascade-step 是每子项错峰延迟；过快=糊成一团，过慢=拖沓。--cascade-rise 是入场上推位移。气质越快(snappy)step 越小，越电影感越大。",
+  "cascadeStep": {
+   "minMs": 50,
+   "maxMs": 140,
+   "$comment": "全主题 --cascade-step 合理区间。低于 50ms 错峰看不出，高于 140ms 拖沓。"
+  },
+  "cascadeRise": {
+   "minPx": 8,
+   "maxPx": 28,
+   "$comment": "上推位移区间。低于 8px 几乎无位移感，高于 28px 入场太跳。"
+  },
+  "perTheme": {
+   "newsroom-v2": {
+    "--cascade-step": "110ms",
+    "--cascade-rise": "16px"
+   },
+   "bold-signal-v2": {
+    "--cascade-step": "85ms",
+    "--cascade-rise": "22px"
+   },
+   "swiss-ikb-v2": {
+    "--cascade-step": "70ms",
+    "--cascade-rise": "12px"
+   },
+   "viz-studio": {
+    "--cascade-step": "80ms",
+    "--cascade-rise": "16px"
+   },
+   "neon-cyber": {
+    "--cascade-step": "90ms",
+    "--cascade-rise": "20px"
+   },
+   "electric-studio": {
+    "--cascade-step": "95ms",
+    "--cascade-rise": "14px"
+   }
+  },
+  "ordering": {
+   "$comment": "气质排序断言：stepAscending 列表必须严格递增（克制→稳重）。Swiss 最克制(最快最小)，newsroom 最稳重。neon-cyber/electric-studio 落在中段。若某次主题改动打破排序，说明气质漂了。",
+   "stepAscending": [
+    "swiss-ikb-v2",
+    "viz-studio",
+    "bold-signal-v2",
+    "neon-cyber",
+    "electric-studio",
+    "newsroom-v2"
+   ]
+  }
+ },
+ "glowStrength": {
+  "$comment": "辉光强度阈值。--glow-strength 是 .glow-card 光晕 + 霓虹边强度乘子(0~1)。严肃/浅色主题必须低，霓虹/暗色 pitch 可高。",
+  "range": {
+   "min": 0.0,
+   "max": 0.6,
+   "$comment": "全主题硬上限 0.6——超过就刺眼/AI 味。"
+  },
+  "thresholds": {
+   "restrained": {
+    "max": 0.2,
+    "$comment": "Swiss / 报刊 / 学术等克制主题不得超过此值。"
+   },
+   "moderate": {
+    "min": 0.15,
+    "max": 0.3,
+    "$comment": "暗色 studio 类主题：暗底需要稍强光晕才看得见层次，但仍不张扬。"
+   },
+   "expressive": {
+    "min": 0.4,
+    "$comment": "霓虹 / pitch-deck 旗舰主题应达到此值才有「全场动效标杆」效果。"
+   }
+  },
+  "perTheme": {
+   "newsroom-v2": 0.18,
+   "bold-signal-v2": 0.55,
+   "swiss-ikb-v2": 0.1,
+   "viz-studio": 0.22,
+   "neon-cyber": 0.5,
+   "electric-studio": 0.16
+  },
+  "classification": {
+   "$comment": "每主题应落在哪个档。脚本据此断言：restrained ≤0.20，moderate 在 [0.15,0.30]，expressive ≥0.40。viz-studio(暗色致敬,0.22) 与 electric-studio(电蓝浅底,0.16) 落 moderate；bold-signal-v2(旗舰,0.55) 与 neon-cyber(赛博霓虹,0.50) 落 expressive。",
+   "restrained": [
+    "newsroom-v2",
+    "swiss-ikb-v2"
+   ],
+   "moderate": [
+    "viz-studio",
+    "electric-studio"
+   ],
+   "expressive": [
+    "bold-signal-v2",
+    "neon-cyber"
+   ]
+  },
+  "orbOpacity": {
+   "$comment": "--orb-opacity 是 ambient-orbs 呼吸氛围透明度，必须比 glow 更克制。",
+   "range": {
+    "min": 0.03,
+    "max": 0.2
+   },
+   "perTheme": {
+    "newsroom-v2": 0.06,
+    "bold-signal-v2": 0.16,
+    "swiss-ikb-v2": 0.05,
+    "viz-studio": 0.06,
+    "neon-cyber": 0.14,
+    "electric-studio": 0.06
+   }
+  }
+ },
+ "textGradient": {
+  "$comment": "字体/文字梯度基准。5 档文字色必须单调递减(从 --text 到 --text-ghost 越来越淡)。脚本计算每档相对底色的对比度/不透明度并断言严格递减。",
+  "rungs": [
+   "--text",
+   "--text-2",
+   "--text-mute",
+   "--text-faint",
+   "--text-ghost"
+  ],
+  "monotonicallyDecreasing": true,
+  "minContrastBodyOnSurface": 4.5,
+  "$comment2": "WCAG: --text 在 --surface 上正文必须 ≥4.5:1。--text-ghost 是背景脚手架档，豁免对比度下限，但必须是最淡的一档。",
+  "perThemeRungs": {
+   "newsroom-v2": {
+    "--text": "#14110b",
+    "--text-2": "#2a261a",
+    "--text-mute": "#5e564a",
+    "--text-faint": "#8c8473"
+   },
+   "bold-signal-v2": {
+    "--text": "#f5f5f5",
+    "--text-2": "#d8d8d8",
+    "--text-mute": "#8a8a8a",
+    "--text-faint": "#5a5a5a"
+   },
+   "swiss-ikb-v2": {
+    "--text": "#0a0a0a",
+    "--text-2": "#2a2a2a",
+    "--text-mute": "#737373",
+    "--text-faint": "#a8a8a8"
+   },
+   "viz-studio": {
+    "--text": "#f4f4f6",
+    "--text-2": "#c4c4cf",
+    "--text-mute": "#7e7e8c",
+    "--text-faint": "#4d4d59",
+    "--text-ghost": "rgba(244, 244, 246, 0.12)"
+   }
+  }
+ },
+ "accentBudget": {
+  "$comment": "强调色预算 / 单一饱和色纪律。--accent-2 仅作渐变/光晕伙伴，不当二级品牌色。脚本断言：定义了 --accent-2 的主题必须也定义 --accent；--accent-soft/--accent-glow 必须与 --accent 或 --accent-2 同色相（部分主题如 neon-cyber 用 accent-2 色相做签名双色 glow，合法）。",
+  "accent2IsGradientPartnerOnly": true,
+  "perThemeAccent2": {
+   "newsroom-v2": "#1f3a5f",
+   "bold-signal-v2": "#d81e88",
+   "swiss-ikb-v2": "#0090c8",
+   "viz-studio": "#a855f7",
+   "neon-cyber": "#ff00aa",
+   "electric-studio": "#6f8cff"
+  },
+  "glowMayMatchAccent2": true
+ },
+ "comparisonFrameNarrative": {
+  "$comment": "对比表叙事格式基准 (Vizplainer #8 签名)。校验 comparison-frame EXAMPLE 骨架遵守叙事铁律。",
+  "examplePath": "references/EXAMPLES/comparison-frame",
+  "rules": [
+   {
+    "id": "standalone-chapter",
+    "desc": "对比作为独立章节，不埋进正文角落",
+    "mustMention": [
+     "独立章节"
+    ]
+   },
+   {
+    "id": "competitor-cols-gray",
+    "desc": "竞品列灰态(--text-faint/--text-ghost)，我方列 accent 高亮",
+    "mustMention": [
+     "--text-ghost",
+     "--text-faint",
+     "accent"
+    ]
+   },
+   {
+    "id": "per-column-reveal",
+    "desc": "逐列揭示，禁一次全亮(每列1step)",
+    "mustMention": [
+     "逐列揭示"
+    ],
+    "mustForbidPhrase": [
+     "一次全亮"
+    ]
+   },
+   {
+    "id": "char-not-emoji",
+    "desc": "✓/✕ 用字符不用 emoji",
+    "mustMention": [
+     "✓",
+     "✕"
+    ],
+    "forbidEmoji": [
+     "✅",
+     "❌"
+    ]
+   },
+   {
+    "id": "narrations-n-plus-1",
+    "desc": "narrations.ts 必须 N+1 条(N列+1设问)",
+    "mustMention": [
+     "N+1"
+    ]
+   }
+  ]
+ },
+ "visualRegression": {
+  "$comment": "视觉回归任务配置。对所有定义了完整动效套件的主题(motionThemes)对比布局快照，确保主题变动不致动效原语/字体梯度偏离基准。D-2 后含 neon-cyber/electric-studio。",
+  "templates": [
+   "newsroom-v2",
+   "bold-signal-v2",
+   "swiss-ikb-v2",
+   "viz-studio",
+   "neon-cyber",
+   "electric-studio"
+  ],
+  "fixtureRoute": "/verify.html",
+  "viewport": {
+   "width": 1280,
+   "height": 760,
+   "deviceScaleFactor": 2
+  },
+  "settleMs": 2600,
+  "pixelDiffThreshold": 0.1,
+  "maxDiffPixelRatio": 0.012,
+  "$comment2": "settleMs 给入场动效播完时间后再截图(快照测的是 .in 终态布局，不是中间帧)。pixelDiffThreshold=单像素容差，maxDiffPixelRatio=全图允许差异占比(1.2%)，给字体抗锯齿留余量。"
+ },
+ "guidelineAnchors": {
+  "$comment": "O-1：指引类文档无法做 token 断言，但可校验「锚点标题仍存在」，防止 Vizplainer 借鉴段被误删。每条 = {file, mustContain[]}。",
+  "checks": [
+   {
+    "file": "references/CHAPTER-CRAFT.md",
+    "mustContain": [
+     "六条进阶手法",
+     "层级三板斧",
+     "拟物",
+     "密度反比",
+     "强调色出现预算"
+    ]
+   },
+   {
+    "file": "references/SCRIPT-STYLE.md",
+    "mustContain": [
+     "整片叙事弧线"
+    ]
+   },
+   {
+    "file": "references/OUTLINE-FORMAT.md",
+    "mustContain": [
+     "叙事弧线"
+    ]
+   }
+  ]
+ }
 }

@@ -504,6 +504,11 @@
   --accent:       #4361ee;             /* electric corporate blue */
   --accent-soft:  rgba(67, 97, 238, 0.10);
   --accent-glow:  rgba(67, 97, 238, 0.32);
+  /* 动效原语 token（D-2 升级：补齐完整套件，电蓝浅底 → 中间档克制） */
+  --cascade-step:   95ms;
+  --cascade-rise:   14px;
+  --glow-strength:  0.16;
+  --orb-opacity:    0.06;
   --accent-2:     #6f8cff;              /* D2: lighter blue — gradient/glow partner only */
 
   /* ─── fonts ─── */
@@ -897,6 +902,11 @@
   --accent:       #00ffcc;             /* electric cyan */
   --accent-soft:  rgba(0, 255, 204, 0.10);
   --accent-glow:  rgba(255, 0, 170, 0.55);   /* SIGNATURE — magenta glow */
+  /* 动效原语 token（D-2 升级：补齐完整套件，赛博暗色 → 表现档高辉光） */
+  --cascade-step:   90ms;
+  --cascade-rise:   20px;
+  --glow-strength:  0.50;
+  --orb-opacity:    0.14;
   --accent-2:     #ff00aa;              /* D2: magenta — gradient/glow partner only */
 
   /* ─── fonts ─── */

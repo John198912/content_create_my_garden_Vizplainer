@@ -70,6 +70,14 @@ body {
   --stage-pad-x: 96px;
   --stage-pad-y: 80px;
 
+  /* ── Scene rhythm（A2 / Vizplainer Top8 #6 「单一节奏单元」）──
+     场景内大模块之间的统一纵向间距。默认对齐 stage-pad-y，
+     让整片像 Vizplainer 的 py-24 那样有单一呼吸节奏；
+     章节需要更舒展/更紧凑时只调这一个 token，不要散落写死 margin。*/
+  --scene-gap: var(--stage-pad-y);
+  --scene-gap-tight: calc(var(--stage-pad-y) * 0.5);
+  --scene-gap-loose: calc(var(--stage-pad-y) * 1.5);
+
   /* ── Radius scale (themes reference these via --r-card; chapters write
         their own radii freely) ── */
   --r-flat:    0;
