@@ -1,0 +1,193 @@
+.end-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content {
+  animation: step-fade-in 350ms var(--ease-quart) both;
+}
+@keyframes step-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.end-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.end-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─── jig quote ─── */
+.end-jig-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.end-quote-en {
+  font-size: 88px;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.end-quote-by {
+  font-size: 18px;
+  color: var(--text-mute);
+}
+.end-quote-zh {
+  font-family: var(--font-display-cn);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ─── four recall ─── */
+.end-four-recall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.end-recall-items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.end-recall-item {
+  font-family: var(--font-display-cn);
+  font-size: 28px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 14px 28px;
+}
+.end-recall-footer {
+  font-size: 30px;
+  color: var(--text-2);
+}
+
+/* ─── exam card ─── */
+.end-exam-card {
+  padding: 32px 52px;
+}
+.end-exam-title {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  color: var(--text-2);
+}
+.end-exam-line {
+  font-family: var(--font-display-cn);
+  font-size: 52px;
+  color: var(--text);
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* ─── choice ─── */
+.end-choice {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.end-choice-option {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  padding: 16px 36px;
+  border-radius: var(--r-sm);
+}
+.end-choice-bad {
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  color: var(--text-mute);
+}
+.end-choice-good {
+  background: var(--surface-2);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+.end-choice-or {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text-mute);
+}
+
+/* ─── metaphor ─── */
+.end-metaphor {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ─── CTA ─── */
+.end-cta-card {
+  padding: 32px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--accent);
+}
+.end-cta-question {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  color: var(--text);
+  font-weight: 700;
+}
+.end-cta-vs {
+  color: var(--text-mute);
+  font-weight: 400;
+}
+.end-cta-prompt {
+  font-family: var(--font-display-cn);
+  font-size: 56px;
+  color: var(--accent);
+  font-weight: 900;
+}
+.end-cta-hint {
+  font-size: 18px;
+  color: var(--text-mute);
+}
+
+/* ─── signoff ─── */
+.end-signoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.end-signoff-name {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text);
+  font-weight: 700;
+}
+.end-signoff-msg {
+  font-size: 28px;
+  color: var(--text-2);
+}
+.end-signoff-bye {
+  font-size: 18px;
+  color: var(--text-mute);
+  letter-spacing: 0.2em;
+}
+
+/* ─── ambient ─── */
+.end-orb {
+  z-index: 0;
+}

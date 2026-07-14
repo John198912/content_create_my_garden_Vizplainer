@@ -1,0 +1,534 @@
+schemaVersion: "2.1"
+meta:
+  id: token-sovereignty
+  title: 你每次用ChatGPT，都在交一笔看不见的税
+  width: 1920
+  height: 1080
+  fps: 30
+  language: zh-CN
+  timebase: microseconds
+  mode: draft
+chapters:
+  - id: opening
+    title: 开场：Karp在CNBC说了什么
+    purpose: 用可核验原话建立问题与观看动机
+    scenes:
+      - id: opening-scene
+        role: hook
+        layout: single-focus-16-9
+        heroFrameBeatId: opening-5
+        focalElement: opening-message
+        transitionIn: opening-focus
+        transitionOut: chapter-push
+        visuals:
+          - id: opening-message
+            type: chapter-visual-system
+            serves: 用可核验原话建立问题与观看动机
+            claimIds: &a1
+              - claim-karp-cnbc-2026-07-01
+              - claim-token-no-value
+        beats:
+          - id: opening-0
+            message: AI行业到底哪里出了问题
+            narrationSegmentId: seg-opening-0
+            narration: 2026年7月1号，一个身家120多亿美元的科技CEO，坐在CNBC直播镜头前。
+            screenCopy:
+              primary: AI行业到底哪里出了问题
+            claimIds: *a1
+            durationUs: 7200000
+          - id: opening-1
+            message: Something has gone completely wrong
+            narrationSegmentId: seg-opening-1
+            narration: 开场第一句话："Something has gone completely wrong。"有些东西已经彻底跑偏了。
+            screenCopy:
+              primary: Something has gone completely wrong
+            claimIds: *a1
+            durationUs: 9700000
+          - id: opening-2
+            message: 不是小问题，是结构性问题
+            narrationSegmentId: seg-opening-2
+            narration: 他说企业花几百万买token，拿到零价值，自己的IP还被偷走。
+            screenCopy:
+              primary: 不是小问题，是结构性问题
+            claimIds: *a1
+            durationUs: 6000000
+          - id: opening-3
+            message: Token计费 · 零价值 · IP风险
+            narrationSegmentId: seg-opening-3
+            narration: 主持人Becky Quick愣了两秒："你听起来很愤怒。"他回了四个字："这是报道。"另一个主持人Sorkin插了一句："Sounds like shade。"这听着像在阴阳怪气。他面不改色："No, no. This is reporting。"
+            screenCopy:
+              primary: Token计费 · 零价值 · IP风险
+            claimIds: *a1
+            durationUs: 20800000
+          - id: opening-4
+            message: 为什么一家AI公司CEO要主动拆台
+            narrationSegmentId: seg-opening-4
+            narration: 这个人是Palantir的CEO，Alex Karp。
+            screenCopy:
+              primary: 为什么一家AI公司CEO要主动拆台
+            claimIds: *a1
+            durationUs: 6000000
+          - id: opening-5
+            message: 先听完他的四个论点
+            narrationSegmentId: seg-opening-5
+            narration: 在接下来20分钟的直播里，他说了很多CEO不会在电视上说的大实话。而这些话，跟你每次打开ChatGPT、Claude、任何AI工具的那一刻，有直接的关系。
+            screenCopy:
+              primary: 先听完他的四个论点
+            claimIds: *a1
+            durationUs: 13500000
+  - id: karp-arguments
+    title: Karp的四个核心论点
+    purpose: 区分Karp原话、商业批评与作者解释
+    scenes:
+      - id: karp-arguments-scene
+        role: explanation
+        layout: single-focus-16-9
+        heroFrameBeatId: karp-arg-11
+        focalElement: karp-arguments-message
+        transitionIn: chapter-push
+        transitionOut: chapter-push
+        visuals:
+          - id: karp-arguments-message
+            type: chapter-visual-system
+            serves: 区分Karp原话、商业批评与作者解释
+            claimIds: &a2
+              - claim-token-direction-wrong
+              - claim-token-no-value
+              - claim-wealth-tax
+              - claim-means-of-production
+              - claim-karp-four-questions
+        beats:
+          - id: karp-arg-0
+            message: 先听核心论证
+            narrationSegmentId: seg-karp-arg-0
+            narration: 我们先认真听一下，他到底说了什么。不只是金句，而是他的核心论证。
+            screenCopy:
+              primary: 先听核心论证
+            claimIds: *a2
+            durationUs: 6000000
+          - id: karp-arg-1
+            message: Token · 零价值 · IP
+            narrationSegmentId: seg-karp-arg-1
+            narration: Karp的原话："I'm going to chillax and waste my time with tokens, I'm gonna get no value, and they're gonna get my IP。"翻译过来：我嗑token浪费时间，拿到零价值，然后他们拿走我的IP。
+            screenCopy:
+              primary: Token · 零价值 · IP
+            claimIds: *a2
+            durationUs: 23500000
+          - id: karp-arg-2
+            message: 不是贵，是计费与价值脱节
+            narrationSegmentId: seg-karp-arg-2
+            narration: 不只是在说贵。他是在指出这个计费模型的方向性错误。
+            screenCopy:
+              primary: 不是贵，是计费与价值脱节
+            claimIds: *a2
+            durationUs: 6000000
+          - id: karp-arg-3
+            message: 如果创造$100M价值，为什么只按token收费
+            narrationSegmentId: seg-karp-arg-3
+            narration: 他说，如果AI真能帮企业一天赚一亿美元，服务商为什么只按token收费，而不是分30%？
+            screenCopy:
+              primary: 如果创造$100M价值，为什么只按token收费
+            claimIds: *a2
+            durationUs: 7700000
+          - id: karp-arg-4
+            message: Karp的推论：按用量收费不等于按价值收费
+            narrationSegmentId: seg-karp-arg-4
+            narration: 这是Karp的推论，不是定价理论的通用结论：如果AI声称创造了巨大业务价值，却只按token计费，那么计费单位与价值单位并没有对齐。按用量收费，不等于按价值收费。
+            screenCopy:
+              primary: Karp的推论：按用量收费不等于按价值收费
+            claimIds: *a2
+            durationUs: 14300000
+          - id: karp-arg-5
+            message: ② 财富税批评
+            narrationSegmentId: seg-karp-arg-5
+            narration: Karp说了一句很重的话：当前的AI服务模式，是一种从亿万富翁开始、最终覆盖所有用户的不公平的财富税。企业支付token，换不来实际价值。自身的模型权重和核心价值还会被窃取。
+            screenCopy:
+              primary: ② 财富税批评
+            claimIds: *a2
+            durationUs: 15400000
+          - id: karp-arg-6
+            message: 税：必须交且难以控制用途
+            narrationSegmentId: seg-karp-arg-6
+            narration: 你注意这个词——财富税。不是服务费。不是订阅费。是税。税的意思是什么？你必须交、无法讨价还价、而且你无法控制钱被怎么用。
+            screenCopy:
+              primary: 税：必须交且难以控制用途
+            claimIds: *a2
+            durationUs: 9700000
+          - id: karp-arg-7
+            message: ③ 生产资料控制权
+            narrationSegmentId: seg-karp-arg-7
+            narration: 客户的核心诉求其实特别简单："They want to know they own the means of production。"他们想确认自己拥有生产资料，这些东西不会被转移给别人。有意思。Karp在用马克思主义的词汇——生产资料——来描述AI时代的商业问题。
+            screenCopy:
+              primary: ③ 生产资料控制权
+            claimIds: *a2
+            durationUs: 22000000
+          - id: karp-arg-8
+            message: 模型 · 权重 · 企业价值
+            narrationSegmentId: seg-karp-arg-8
+            narration: 他说客户要求在三个问题上有完全的自主权：谁控制模型？谁掌控参数权重？谁掌握对应的企业价值？这三个问题，缺一个都不能算拥有。
+            screenCopy:
+              primary: 模型 · 权重 · 企业价值
+            claimIds: *a2
+            durationUs: 10600000
+          - id: karp-arg-9
+            message: ④ 重建信任的四问
+            narrationSegmentId: seg-karp-arg-9
+            narration: Karp提出的行业底线：谁拥有我的数据？数据存在哪？我的提示是否安全？信息是否传输给第三方？注意，他不是在问AI公司。他是在问你——你用AI的时候，能回答这四个问题吗？
+            screenCopy:
+              primary: ④ 重建信任的四问
+            claimIds: *a2
+            durationUs: 14100000
+          - id: karp-arg-10
+            message: 四个论点串起来
+            narrationSegmentId: seg-karp-arg-10
+            narration: 好。把Karp的四个论点串起来看：计费与价值可能脱节；他把这种不对等称为财富税；更深一层，是企业能否控制模型、权重和自身价值。要重建信任，用户至少要能回答四个最基本的控制权问题。
+            screenCopy:
+              primary: 四个论点串起来
+            claimIds: *a2
+            durationUs: 15400000
+          - id: karp-arg-11
+            message: 这套逻辑只对企业成立吗
+            narrationSegmentId: seg-karp-arg-11
+            narration: 你是不是已经隐约感觉到——这套逻辑，好像不只是对企业成立？
+            screenCopy:
+              primary: 这套逻辑只对企业成立吗
+            claimIds: *a2
+            durationUs: 6000000
+  - id: enterprise-to-individual
+    title: 从企业到个人：共同主题是控制权
+    purpose: 把企业控制权问题谨慎映射到个人可迁移资产
+    scenes:
+      - id: enterprise-to-individual-scene
+        role: explanation
+        layout: single-focus-16-9
+        heroFrameBeatId: e2i-8
+        focalElement: enterprise-to-individual-message
+        transitionIn: chapter-push
+        transitionOut: chapter-push
+        visuals:
+          - id: enterprise-to-individual-message
+            type: chapter-visual-system
+            serves: 把企业控制权问题谨慎映射到个人可迁移资产
+            claimIds: &a3
+              - claim-personal-token-loss
+              - claim-personal-wealth-tax
+              - claim-personal-means-of-production
+              - claim-personal-cant-answer-four
+              - claim-same-logic-enterprise-individual
+        beats:
+          - id: e2i-0
+            message: 把企业论点换成你的版本
+            narrationSegmentId: seg-e2i-0
+            narration: 我们来做一件事。把Karp的四个论点，一个字一个字地，从企业换成你。第一个。Token模式偷走价值。你每次打开AI对话框，是不是在用一种按用量付费的模式？月费、订阅、API调用次数。你以为你在买服务。
+            screenCopy:
+              primary: 把企业论点换成你的版本
+            claimIds: *a3
+            durationUs: 17000000
+          - id: e2i-1
+            message: 一次结果之外，你留下了什么
+            narrationSegmentId: seg-e2i-1
+            narration: 沿着Karp的批评继续追问：按用量收费不等于按价值收费。每次AI帮你写完一段文案、代码或答案之后，你手里多了什么？除了当次结果，有没有留下可复用、可迁移、由你掌控的方法和资产？
+            screenCopy:
+              primary: 一次结果之外，你留下了什么
+            claimIds: *a3
+            durationUs: 15200000
+          - id: e2i-2
+            message: 平台如何处理交互因产品与设置而异
+            narrationSegmentId: seg-e2i-2
+            narration: 第二个。你不只是在付费，也在交出需求、思考过程和判断偏好。平台是否保存、分析或用这些交互改进服务，取决于具体产品、账户设置和授权条款。这里真正要审视的，是交换边界是否清楚。
+            screenCopy:
+              primary: 平台如何处理交互因产品与设置而异
+            claimIds: *a3
+            durationUs: 14700000
+          - id: e2i-3
+            message: 你有没有留下自己的可复用资产
+            narrationSegmentId: seg-e2i-3
+            narration: 你确定得到的是一次服务；平台确定得到的是收入，并可能得到使用信号或经授权的改进数据。与其先把它定性为税，不如问一个更可操作的问题：这次服务之后，你有没有留下属于自己的可复用资产？
+            screenCopy:
+              primary: 你有没有留下自己的可复用资产
+            claimIds: *a3
+            durationUs: 15800000
+          - id: e2i-4
+            message: 你的生产资料不是GPU
+            narrationSegmentId: seg-e2i-4
+            narration: 第三个。你的生产资料正在被转移。Karp说企业想确认：谁控制模型？谁掌控权重？谁掌握企业价值？翻译成你：谁控制你的prompt库？谁掌握你的创作模板？那些只有你这么写的判断标准，是存在你自己的笔记里，还是散落在几百次AI对话记录里——那些记录你甚至没有导出过？
+            screenCopy:
+              primary: 你的生产资料不是GPU
+            claimIds: *a3
+            durationUs: 22400000
+          - id: e2i-5
+            message: 它们在本地还是散落在平台
+            narrationSegmentId: seg-e2i-5
+            narration: 你的生产资料不是GPU。是你的问题拆解方式，是你的审美判断，是你反复验证过的prompt模板，是你对好内容的定义。这些东西，现在在哪里？
+            screenCopy:
+              primary: 它们在本地还是散落在平台
+            claimIds: *a3
+            durationUs: 11800000
+          - id: e2i-6
+            message: 四个问题需要查条款与设置
+            narrationSegmentId: seg-e2i-6
+            narration: 第四个。你能回答那四个问题吗？你用ChatGPT写的东西，数据归谁？OpenAI的服务器上存了什么？你的prompt被拿去训练下一个模型了吗？你输出的内容，会不会被传输给第三方？
+            screenCopy:
+              primary: 四个问题需要查条款与设置
+            claimIds: *a3
+            durationUs: 15600000
+          - id: e2i-7
+            message: 无法确认说明控制边界不透明
+            narrationSegmentId: seg-e2i-7
+            narration: 这些答案会因产品、版本、账户和设置而不同。重点不是假设你一定答不上来，而是：如果必须翻遍条款仍无法确认，控制边界本身就不够透明。
+            screenCopy:
+              primary: 无法确认说明控制边界不透明
+            claimIds: *a3
+            durationUs: 11000000
+          - id: e2i-8
+            message: 保留可迁移资产，降低锁定风险
+            narrationSegmentId: seg-e2i-8
+            narration: 这四个问题，从企业到个人，都指向控制权，但风险规模并不相同。公司需要可控的生产资料才能竞争；个人需要可迁移的能力资产，才能降低被单一平台锁定和被替代的风险。Karp给CEO看病，我们借这张处方，给自己号个脉。
+            screenCopy:
+              primary: 保留可迁移资产，降低锁定风险
+            claimIds: *a3
+            durationUs: 18100000
+  - id: root-cause
+    title: 底层机制：规模化吸收与重组的治理风险
+    purpose: 准确解释模型能力来源与原创治理风险
+    scenes:
+      - id: root-cause-scene
+        role: explanation
+        layout: single-focus-16-9
+        heroFrameBeatId: rc-6
+        focalElement: root-cause-message
+        transitionIn: chapter-push
+        transitionOut: chapter-push
+        visuals:
+          - id: root-cause-message
+            type: chapter-visual-system
+            serves: 准确解释模型能力来源与原创治理风险
+            claimIds: &a4
+              - claim-foundation-model-absorption-risk
+              - claim-sharingan-effect
+              - claim-originality-dilution
+              - claim-three-layer-diagnosis
+        beats:
+          - id: rc-0
+            message: 规模化数据训练形成生成能力
+            narrationSegmentId: seg-rc-0
+            narration: 但是，这里有个更深的问题。Karp批判的是商业模式，底层还涉及模型如何获得能力：大规模公开数据、授权数据和人工反馈，经筛选与训练后，让模型学习统计模式并形成生成能力。它不是把互联网原样装进模型，更不是天然带有侵犯意图。
+            screenCopy:
+              primary: 规模化数据训练形成生成能力
+            claimIds: *a4
+            durationUs: 19100000
+          - id: rc-1
+            message: 风险来自数据、授权、产品与治理
+            narrationSegmentId: seg-rc-1
+            narration: 真正的风险来自规模：知识可以被高速吸收、重组和分发。数据从哪里来、是否获得授权、能否退出、输出如何追溯，都会改变风险。它不能只归结为某家公司坏，也不能只归结为模型天生如此。
+            screenCopy:
+              primary: 风险来自数据、授权、产品与治理
+            claimIds: *a4
+            durationUs: 14700000
+          - id: rc-2
+            message: 写轮眼：高速模仿的修辞隐喻
+            narrationSegmentId: seg-rc-2
+            narration: 我用写轮眼做一个修辞隐喻：它把高速观察与模仿具象化。AI降低了生成相似内容的成本，但相似、借鉴和侵权不是一回事，仍要看来源、实质相似和授权边界。
+            screenCopy:
+              primary: 写轮眼：高速模仿的修辞隐喻
+            claimIds: *a4
+            durationUs: 12500000
+          - id: rc-3
+            message: 原创归属会更难辨认
+            narrationSegmentId: seg-rc-3
+            narration: 当来源与发布时间线被大量相似内容淹没，原创者可能更难证明先后关系，观众也更难辨认归属。
+            screenCopy:
+              primary: 原创归属会更难辨认
+            claimIds: *a4
+            durationUs: 7700000
+          - id: rc-4
+            message: 批量仿写降低了成本
+            narrationSegmentId: seg-rc-4
+            narration: 我自己做自媒体之后，最焦虑的就是这个问题。文章记录灵光一现的感受和思想，而生成工具让批量仿写和复杂重组变得更便宜。只看结果，越来越难判断它来自独立创作、合理借鉴还是未经授权的复制。
+            screenCopy:
+              primary: 批量仿写降低了成本
+            claimIds: *a4
+            durationUs: 16000000
+          - id: rc-5
+            message: 竞争结果不只由模仿速度决定
+            narrationSegmentId: seg-rc-5
+            narration: 这可能削弱原创者的激励，让作品价值在内容洪流里被稀释。公司也面对更低的模仿成本，但竞争结果还取决于品牌、渠道、执行、数据和服务，并不必然只剩价格战。
+            screenCopy:
+              primary: 竞争结果不只由模仿速度决定
+            claimIds: *a4
+            durationUs: 12700000
+          - id: rc-6
+            message: 共同主题是控制权
+            narrationSegmentId: seg-rc-6
+            narration: 所以，把逻辑校准后再串起来：计费与价值脱节，是Karp的商业批评；知识被规模化吸收与重组，是需要治理的机制；个人没有留存可迁移的能力资产，是我们要处理的风险。公司与个人尺度不同，但共同主题都是控制权。
+            screenCopy:
+              primary: 共同主题是控制权
+            claimIds: *a4
+            durationUs: 17400000
+  - id: global-sovereignty
+    title: AI控制边界与个人的处境
+    purpose: 用可验证案例解释不同主体如何重建控制边界
+    scenes:
+      - id: global-sovereignty-scene
+        role: explanation
+        layout: single-focus-16-9
+        heroFrameBeatId: gs-2
+        focalElement: global-sovereignty-message
+        transitionIn: chapter-push
+        transitionOut: chapter-push
+        visuals:
+          - id: global-sovereignty-message
+            type: chapter-visual-system
+            serves: 用可验证案例解释不同主体如何重建控制边界
+            claimIds: &a5
+              - claim-china-ai-regulatory-boundary
+              - claim-swiss-rejection
+              - claim-global-sovereignty-tear
+              - claim-individual-bottom
+        beats:
+          - id: gs-0
+            message: 不同主体都在重建AI控制边界
+            narrationSegmentId: seg-gs-0
+            narration: 再拉远一点。控制权不只发生在商业层面。美国企业界，Karp要求客户掌控模型、权重和所谓生产资料；中国对面向公众的生成式AI服务设置安全评估、算法备案与数据治理边界；瑞士对Palantir的引入多年保持审慎，公开报道显示至少九次未推进或回绝，军方二十页报告建议考虑替代方案。这些事件背景不同，不能硬说成同步对抗，但都指向同一个主题：谁来设定AI的控制边界。
+            screenCopy:
+              primary: 不同主体都在重建AI控制边界
+            claimIds: *a5
+            durationUs: 31400000
+          - id: gs-1
+            message: 个人的议价能力通常最弱
+            narrationSegmentId: seg-gs-1
+            narration: 在这场博弈里，个人通常议价能力最弱：掌握的信息更少，迁移成本更高，也很少直接参与规则制定。因此，个人更需要保留能导出、能复用、能迁移的prompt模板、判断标准和工作方法。
+            screenCopy:
+              primary: 个人的议价能力通常最弱
+            claimIds: *a5
+            durationUs: 14700000
+          - id: gs-2
+            message: 保留属于每一个具体人的可迁移资产
+            narrationSegmentId: seg-gs-2
+            narration: Karp关心资本和企业，这是他站在那个位置的自然视角。但我们的立场不一样。我们关心的是每一个具体的人。尤其是那些还不知道自己正在交房租的人。
+            screenCopy:
+              primary: 保留属于每一个具体人的可迁移资产
+            claimIds: *a5
+            durationUs: 12500000
+  - id: three-principles
+    title: 三件你可以今天开始做的事
+    purpose: 把控制权问题收束为低成本、可执行的行动
+    scenes:
+      - id: three-principles-scene
+        role: explanation
+        layout: single-focus-16-9
+        heroFrameBeatId: tp-6
+        focalElement: three-principles-message
+        transitionIn: chapter-push
+        transitionOut: chapter-push
+        visuals:
+          - id: three-principles-message
+            type: chapter-visual-system
+            serves: 把控制权问题收束为低成本、可执行的行动
+            claimIds: &a6
+              - claim-principle-1-own-judgment
+              - claim-principle-2-local-assets
+              - claim-principle-3-tool-switch
+              - claim-start-saving-today
+        beats:
+          - id: tp-0
+            message: 原则一：拥有你的判断标准
+            narrationSegmentId: seg-tp-0
+            narration: 好。现在把Karp给CEO开的处方，翻译成个人版本。三个原则。这三个原则和Karp的四个论点，是一一对应的。原则一：你拥有你的判断标准。对应Karp的——控制权重就是控制命运。Karp说权重是机构历经艰辛积累的知识精华。到你这儿——你的权重，就是你为什么这么选的判断过程。为什么这个标题比那个好。为什么这个角度有意思。为什么删这段留那段。
+            screenCopy:
+              primary: 原则一：拥有你的判断标准
+            claimIds: *a6
+            durationUs: 28900000
+          - id: tp-1
+            message: 记录判断过程
+            narrationSegmentId: seg-tp-1
+            narration: AI能复制你的输出，复制不了你的判断过程——前提是你自己把它记下来了。
+            screenCopy:
+              primary: 记录判断过程
+            claimIds: *a6
+            durationUs: 6000000
+          - id: tp-2
+            message: 原则二：知识资产不只留在平台
+            narrationSegmentId: seg-tp-2
+            narration: 原则二：你的知识资产不在平台服务器上。对应Karp的四问。每一次你觉得这次和AI的对话还不错的时候，把那场对话存到本地。每一个好用的prompt，变成可复用的模板。
+            screenCopy:
+              primary: 原则二：知识资产不只留在平台
+            claimIds: *a6
+            durationUs: 14500000
+          - id: tp-3
+            message: 把好对话导出到本地
+            narrationSegmentId: seg-tp-3
+            narration: 纯消耗和积累资产的区别：前者结束后你少了一堆token，后者结束后你多了一个文件。
+            screenCopy:
+              primary: 把好对话导出到本地
+            claimIds: *a6
+            durationUs: 7400000
+          - id: tp-4
+            message: 把好prompt变成模板
+            narrationSegmentId: seg-tp-4
+            narration: 原则三：你可以随时切换工具而不损失能力。对应Karp的——生产资料不被转移。你的判断标准、prompt模板、问题拆解方式、审美偏好——这些才是你的生产资料。它们不在任何一个平台上。在你自己的文件夹里、习惯里。工具可以换，这些东西跟着你。
+            screenCopy:
+              primary: 把好prompt变成模板
+            claimIds: *a6
+            durationUs: 19700000
+          - id: tp-5
+            message: 原则三：切换工具不损失能力
+            narrationSegmentId: seg-tp-5
+            narration: 这三个原则不是在让你立刻去买GPU跑本地模型。不是那个意思。一个更简单的起点：从今天开始，每一次觉得"这次对话还不错"，存下来。不用整理。不用分类。先存。
+            screenCopy:
+              primary: 原则三：切换工具不损失能力
+            claimIds: *a6
+            durationUs: 13100000
+          - id: tp-6
+            message: 今天先保存一段值得保留的对话
+            narrationSegmentId: seg-tp-6
+            narration: 这个动作本身就是主权化的第一步。它意味着你开始意识到：这次对话里，有"我"的痕迹。而这个"我"，值得被自己保留。
+            screenCopy:
+              primary: 今天先保存一段值得保留的对话
+            claimIds: *a6
+            durationUs: 9700000
+  - id: ending
+    title: 结尾：The Jig Is Up
+    purpose: 回扣原话并给出单一、可执行的结尾行动
+    scenes:
+      - id: ending-scene
+        role: resolution
+        layout: single-focus-16-9
+        heroFrameBeatId: end-2
+        focalElement: ending-message
+        transitionIn: chapter-push
+        visuals:
+          - id: ending-message
+            type: chapter-visual-system
+            serves: 回扣原话并给出单一、可执行的结尾行动
+            claimIds: &a7
+              - claim-jig-is-up
+              - claim-start-saving-today
+              - claim-principle-1-own-judgment
+        beats:
+          - id: end-0
+            message: The jig is up
+            narrationSegmentId: seg-end-0
+            narration: Karp在访谈最后说了一句话：The jig is up。骗局曝光了。
+            screenCopy:
+              primary: The jig is up
+            claimIds: *a7
+            durationUs: 6000000
+          - id: end-1
+            message: 醒来不靠愤怒，靠开始积累
+            narrationSegmentId: seg-end-1
+            narration: 我说不准他的骗局具体指什么。但他提出的四个问题——谁拥有数据、数据存在哪、提示是否安全、信息是否传输给第三方——这些问题，不只是企业CEO需要答案。你每次打开AI对话框的时候，都在为这四个问题交一份隐形的答卷。你可以选择交完就走，也可以选择存下来，变成自己的东西。
+            screenCopy:
+              primary: 醒来不靠愤怒，靠开始积累
+            claimIds: *a7
+            durationUs: 22500000
+          - id: end-2
+            message: 从今天起，把自己的思考留在自己手里
+            narrationSegmentId: seg-end-2
+            narration: Karp那个卖药的人，把病历公开了。要不要给自己号个脉，是你的事。好，这就是今天的内容。在弹幕或评论区聊聊：你目前用AI的方式，积累资产和纯消耗，哪种更多？这里是机智的阿卷，关注我，一起在AI时代建造属于自己的东西。下期见。
+            screenCopy:
+              primary: 从今天起，把自己的思考留在自己手里
+            claimIds: *a7
+            durationUs: 18900000
+
+

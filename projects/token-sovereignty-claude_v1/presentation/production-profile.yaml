@@ -1,0 +1,9 @@
+schemaVersion: "3.1"
+collaborationCadence: balanced
+developmentMode: sequential
+aspectMode: landscape
+assetStrategy: hybrid
+theme: bold-signal-v2
+motionPack: editorial-explainer
+outputMode: deterministic
+audioMode: tts-reviewed

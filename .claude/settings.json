@@ -1,0 +1,57 @@
+{
+  "env": {
+    "GARDEN_NODE_BINARY": "/Users/jiang/.nvm/versions/node/v22.23.1/bin/node"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/workflow-control.mjs *)",
+      "Bash(node qa/check-design-tokens.mjs *)",
+      "Bash(node qa/check-v21-contracts.mjs *)",
+      "Bash(node qa/check-collaboration-contracts.mjs *)",
+      "Bash(node qa/check-project-instances.mjs *)",
+      "Bash(bash scripts/scaffold.sh *)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run compile:spec)",
+      "Bash(npm run quality:base)",
+      "Bash(npm run check:production)",
+      "Bash(npm run dev)",
+      "Bash(git diff *)",
+      "Bash(git status *)",
+      "Bash(git log *)"
+    ],
+    "deny": [
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/workflow-guard.sh session-start" }]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/workflow-guard.sh user-prompt" }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|Bash|Agent|Task",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/workflow-guard.sh pre-tool" }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/workflow-guard.sh post-tool" }]
+      }
+    ],
+    "InstructionsLoaded": [
+      {
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/workflow-guard.sh instructions-loaded" }]
+      }
+    ]
+  }
+}

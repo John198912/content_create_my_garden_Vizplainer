@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "3.1",
+  "id": "qa-20260714123420",
+  "projectId": "presentation",
+  "generatedAt": "2026-07-14T12:34:20.664Z",
+  "inputFingerprint": "sha256:67bff899b1c62d0fc78d82137a5c71f7b8697e4ff5d8c63b55b7586b94e2a90b",
+  "gates": {
+    "G1": {
+      "status": "failed",
+      "summary": "✗ audio manifest missing narration segment seg-hierarchy-evidence | ✗ audio manifest missing chapter master why-order |  | 36 production contract error(s)",
+      "evidence": [
+        "claims.json",
+        "video-spec.yaml"
+      ]
+    },
+    "G2": {
+      "status": "failed",
+      "summary": "✗ audio manifest missing narration segment seg-hierarchy-evidence | ✗ audio manifest missing chapter master why-order |  | 36 production contract error(s)",
+      "evidence": [
+        "DESIGN.md"
+      ]
+    },
+    "G3": {
+      "status": "failed",
+      "summary": "✗ audio manifest missing narration segment seg-hierarchy-evidence | ✗ audio manifest missing chapter master why-order |  | 36 production contract error(s)",
+      "evidence": [
+        "video-spec.yaml"
+      ]
+    },
+    "G4": {
+      "status": "passed",
+      "summary": "exit 0",
+      "evidence": [
+        "tsconfig.json"
+      ]
+    },
+    "G5": {
+      "status": "manual-required",
+      "summary": "missing layout evidence",
+      "evidence": []
+    },
+    "G6": {
+      "status": "manual-required",
+      "summary": "missing contrast evidence",
+      "evidence": []
+    },
+    "G7": {
+      "status": "manual-required",
+      "summary": "missing motion evidence",
+      "evidence": []
+    },
+    "G8": {
+      "status": "failed",
+      "summary": "✗ audio manifest missing narration segment seg-hierarchy-evidence | ✗ audio manifest missing chapter master why-order |  | 36 production contract error(s)",
+      "evidence": [
+        "audio-manifest.json",
+        "alignment.json"
+      ]
+    },
+    "G9": {
+      "status": "manual-required",
+      "summary": "missing output evidence",
+      "evidence": []
+    },
+    "G10": {
+      "status": "manual-required",
+      "summary": "missing comprehension evidence",
+      "evidence": []
+    }
+  }
+}

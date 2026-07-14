@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "template-vite-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5174"],
+      "cwd": "templates",
+      "port": 5174
+    },
+    {
+      "name": "token-sovereignty-claude_v1",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "export PATH=\"/Users/jiang/.nvm/versions/node/v22.23.1/bin:$PATH\" && cd /Users/jiang/Desktop/claude_code_workspace/garden_workflow/projects/token-sovereignty-claude_v1/presentation && npx vite --port \"${PORT:-5300}\" --host 0.0.0.0"],
+      "port": 5300
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+.e2i-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content {
+  animation: step-fade-in 350ms var(--ease-quart) both;
+}
+@keyframes step-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.e2i-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+  max-width: 1600px;
+  width: 100%;
+}
+
+/* ─── mapping badge ─── */
+.e2i-map-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.e2i-map-arrow {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-mute);
+}
+
+/* ─── AI icons ─── */
+.e2i-ai-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-ai-icon {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 12px 28px;
+}
+
+/* ─── question card ─── */
+.e2i-question-card {
+  padding: 36px 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+}
+.e2i-question-main {
+  font-family: var(--font-display-cn);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.e2i-highlight {
+  color: var(--accent);
+}
+.e2i-answer-split {
+  display: flex;
+  gap: 48px;
+}
+.e2i-answer-got {
+  font-size: 36px;
+  color: var(--text-2);
+}
+.e2i-answer-lost {
+  font-size: 36px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.e2i-check-mark {
+  color: var(--text-mute);
+}
+.e2i-x-mark {
+  color: var(--accent);
+}
+.e2i-question-sub {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-2);
+}
+
+/* ─── flow diagram ─── */
+.e2i-flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-flow-node {
+  padding: 24px 32px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+.e2i-flow-label {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.e2i-flow-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 22px;
+  color: var(--text);
+}
+.e2i-flow-desc {
+  font-size: 20px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.e2i-flow-arrow-big {
+  font-size: 36px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* ─── who wins ─── */
+.e2i-who-wins {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-win-card {
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 20px 28px;
+  min-width: 200px;
+}
+.e2i-win-header {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.e2i-win-header-accent {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.e2i-win-item {
+  font-size: 28px;
+  color: var(--text-2);
+}
+.e2i-win-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 24px;
+  color: var(--text);
+}
+.e2i-win-vs {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-mute);
+}
+.e2i-win-question {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text);
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+/* ─── assets grid ─── */
+.e2i-assets-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-asset-item {
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 20px 36px;
+}
+.e2i-asset-label {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+  color: var(--text);
+}
+.e2i-assets-tag {
+  margin-top: 4px;
+}
+
+/* ─── where question ─── */
+.e2i-where-question {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-where-left {
+  font-size: 36px;
+  color: var(--text-2);
+}
+.e2i-where-or {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  color: var(--accent);
+}
+.e2i-where-right {
+  font-size: 36px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.e2i-where-sub {
+  font-size: 22px;
+  color: var(--text-mute);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ─── four ask ─── */
+.e2i-four-ask {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+}
+.e2i-ask-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 16px 32px;
+}
+.e2i-ask-q {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+  color: var(--text);
+}
+.e2i-ask-x {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─── cant answer ─── */
+.e2i-cant-answer {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ─── mirror ─── */
+.e2i-mirror {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.e2i-mirror-left,
+.e2i-mirror-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 28px 36px;
+  min-width: 260px;
+}
+.e2i-mirror-main {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+}
+.e2i-mirror-arrow {
+  font-size: 24px;
+  color: var(--text-mute);
+}
+.e2i-mirror-result {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.e2i-mirror-center {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+  color: var(--accent);
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.3;
+}
+.e2i-mirror-same {
+  border: 3px solid var(--accent);
+  border-radius: var(--r-pill);
+  padding: 16px 24px;
+}
+.e2i-closing-line {
+  font-family: var(--font-display-cn);
+  font-size: 48px;
+  color: var(--text);
+}
+
+/* ─── ambient ─── */
+.e2i-orb {
+  z-index: 0;
+}

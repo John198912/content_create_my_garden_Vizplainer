@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "3.1",
+  "managedBy": "workflow-control",
+  "projectId": "token-sovereignty-claude_v1",
+  "phase": "planning",
+  "profileFingerprint": "sha256:667cdce934c470c5a15dbcc479f457f3785d9b5469656d3bfc8f50c20bff1afe",
+  "checkpoints": {
+    "CP0": {
+      "status": "waived",
+      "required": false,
+      "dependsOn": [],
+      "artifactFingerprint": null,
+      "reason": "No high-risk source review requested."
+    },
+    "CP1": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [],
+      "artifactFingerprint": "sha256:c913f435122f2ca5a0f90e78f990cb3385c1461b2ca5a1eaaadf15970f554534",
+      "artifacts": [
+        "script.md",
+        "outline.md",
+        "claims.json",
+        "production-profile.yaml"
+      ],
+      "presentedAt": "2026-07-14T12:33:58.943Z",
+      "approvedAt": "2026-07-15T00:00:00.000Z",
+      "recommendationSnapshotId": "token-sovereignty-v31-plan-b",
+      "reason": "Production profile changed."
+    },
+    "CP2": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [
+        "CP1"
+      ],
+      "artifactFingerprint": null,
+      "approvedAt": "2026-07-15T00:20:00.000Z"
+    },
+    "CP3": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [
+        "CP2"
+      ],
+      "artifactFingerprint": null,
+      "approvedAt": "2026-07-15T00:22:00.000Z"
+    },
+    "CP4": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [
+        "CP3"
+      ],
+      "artifactFingerprint": null,
+      "approvedAt": "2026-07-14T18:49:35.052Z"
+    },
+    "CP5": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [
+        "CP4"
+      ],
+      "artifactFingerprint": null,
+      "approvedAt": "2026-07-14T18:49:35.053Z"
+    },
+    "CP6": {
+      "status": "approved",
+      "required": true,
+      "dependsOn": [
+        "CP5"
+      ],
+      "artifactFingerprint": null,
+      "approvedAt": "2026-07-14T18:52:38.368Z"
+    }
+  },
+  "reports": {
+    "latestQaReportId": "qa-20260714123420",
+    "latestQaFingerprint": "sha256:2fbb9098a6b61063f1682cad0854750beaac9b6f18db6e08d024b8670981a314"
+  },
+  "updatedAt": "2026-07-14T12:34:20.711Z",
+  "migration": {
+    "from": "2.1",
+    "sourceFingerprint": "sha256:f582296f1ffc8c65eb7f11b3bbfe26593099aaf6867facdd2dfe267dad29d7df",
+    "legacyPhase": null,
+    "migratedAt": "2026-07-14T12:21:03.849Z"
+  }
+}

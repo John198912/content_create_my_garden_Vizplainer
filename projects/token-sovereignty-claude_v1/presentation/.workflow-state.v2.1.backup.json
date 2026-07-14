@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "2.1",
+  "projectId": "token-sovereignty-claude_v1",
+  "theme": "bold-signal-v2",
+  "createdAt": "2026-07-13",
+  "checkpoints": {
+    "plan": {
+      "status": "completed",
+      "date": "2026-07-13",
+      "summary": "7 chapters: opening→karp-arguments→enterprise-to-individual→root-cause→global-sovereignty→three-principles→ending. B站16:9, 中文, ~720s estimated. bold-signal-v2 theme."
+    },
+    "visual": {
+      "status": "completed",
+      "date": "2026-07-13",
+      "summary": "DESIGN.md locked: bold-signal-v2 with hot orange + magenta sweep. cascade/glow-card/rise-step/ambient-orbs motion primitives. All chapters built."
+    },
+    "audio": {
+      "status": "pending",
+      "summary": "97 narration segments across 7 chapters. TTS pending — edge-tts or macOS say. audio-manifest.json and alignment.json to be created after TTS."
+    },
+    "output": {
+      "status": "pending",
+      "summary": "Manual/Audio/Auto recording modes available. HyperFrames deterministic render pending full timeline.json."
+    }
+  },
+  "gates": {
+    "G1_content": {"status": "passed", "notes": "24 claims with 4 sources. L1/L2 coverage complete. All 7 chapters have purpose and claims mapping."},
+    "G2_visual": {"status": "passed", "notes": "DESIGN.md locked. bold-signal-v2 tokens extracted. Motion signature defined."},
+    "G3_spec": {"status": "pending", "notes": "video-spec.yaml compilation pending — node not available in this environment."},
+    "G4_build": {"status": "pending", "notes": "TypeScript typecheck pending."},
+    "G5_layout": {"status": "pending", "notes": "Hero frame verification pending dev server startup."},
+    "G6_contrast": {"status": "pending"},
+    "G7_motion": {"status": "pending"},
+    "G8_audio_sync": {"status": "pending"},
+    "G9_output": {"status": "pending"},
+    "G10_comprehension": {"status": "pending"}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "3.1",
+  "id": "receipt-1784049532365-21e26bec",
+  "projectId": "token-sovereignty-claude_v1",
+  "checkpointId": "CP1",
+  "recommendationSnapshotId": "token-sovereignty-v31-plan-b",
+  "promptHash": "sha256:b25ac168f7fd5b33a79070c7ca93888ace71dadd5f5b014e966635d2b8d1d303",
+  "decision": "question",
+  "createdAt": "2026-07-14T17:18:52.366Z",
+  "sessionRef": "sha256:fdba5a49fae2bf7110d287004df3e475fb8e5cee46f69ccbd3cc1693786ad48d",
+  "consumedAt": null
+}

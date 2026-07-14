@@ -1,0 +1,247 @@
+.tp-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content {
+  animation: step-fade-in 350ms var(--ease-quart) both;
+}
+@keyframes step-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tp-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  max-width: 1500px;
+  width: 100%;
+}
+.tp-final-section {
+  gap: 24px;
+  transform: translateY(-44px);
+}
+
+.tp-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─── principle card ─── */
+.tp-principle-card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 48px;
+}
+.tp-principle-num {
+  font-size: 96px;
+  color: var(--accent);
+  opacity: 0.5;
+  line-height: 1.05;
+}
+.tp-principle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.tp-principle-title {
+  font-family: var(--font-display-cn);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+/* ─── weight explain ─── */
+.tp-weight-explain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.tp-weight-label {
+  font-size: 18px;
+}
+.tp-weight-items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--font-display-cn);
+  font-size: 30px;
+  color: var(--text);
+}
+.tp-principle-bottom {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.tp-strikethrough {
+  text-decoration: line-through;
+  color: var(--text-mute);
+}
+.tp-condition {
+  font-size: 24px;
+  color: var(--text-mute);
+  margin-top: 8px;
+}
+
+/* ─── action cards ─── */
+.tp-action-cards {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tp-action-item {
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 280px;
+}
+.tp-action-icon {
+  font-size: 40px;
+}
+.tp-action-text {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+  color: var(--text);
+}
+
+/* ─── compare ─── */
+.tp-compare {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tp-compare-left,
+.tp-compare-right {
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.tp-compare-result {
+  font-family: var(--font-display-cn);
+  font-size: 32px;
+}
+.tp-compare-bad {
+  color: var(--text-mute);
+}
+.tp-compare-good {
+  color: var(--accent);
+  font-weight: 700;
+}
+.tp-compare-vs {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--text-mute);
+}
+
+/* ─── follow you ─── */
+.tp-follow-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.tp-follow-label {
+  font-size: 18px;
+}
+.tp-follow-items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tp-follow-item {
+  font-family: var(--font-display-cn);
+  font-size: 30px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tp-follow-bottom {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text);
+}
+
+/* ─── simplest start ─── */
+.tp-not-gpu {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-2);
+}
+.tp-simplest-card {
+  padding: 36px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid var(--accent);
+}
+.tp-simplest-action {
+  font-family: var(--font-display-cn);
+  font-size: 44px;
+  color: var(--text);
+}
+.tp-simplest-arrow {
+  font-size: 32px;
+  color: var(--accent);
+}
+.tp-simplest-result {
+  font-family: var(--font-display-cn);
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--accent);
+}
+.tp-simplest-note {
+  font-size: 28px;
+  color: var(--text-mute);
+}
+
+/* ─── sovereignty first ─── */
+.tp-sovereignty-first {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.tp-sovereignty-main {
+  font-family: var(--font-display-cn);
+  font-size: 48px;
+  color: var(--text);
+  font-weight: 700;
+}
+.tp-sovereignty-sub {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-2);
+}
+.tp-sovereignty-close {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ─── ambient ─── */
+.tp-orb {
+  z-index: 0;
+}

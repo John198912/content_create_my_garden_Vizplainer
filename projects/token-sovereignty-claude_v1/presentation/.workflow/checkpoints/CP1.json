@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "3.1",
+  "projectId": "token-sovereignty-claude_v1",
+  "checkpointId": "CP1",
+  "status": "awaiting_user",
+  "presentedAt": "2026-07-14T12:33:58.943Z",
+  "artifactFingerprint": "sha256:c913f435122f2ca5a0f90e78f990cb3385c1461b2ca5a1eaaadf15970f554534",
+  "artifacts": [
+    "script.md",
+    "outline.md",
+    "claims.json",
+    "production-profile.yaml"
+  ],
+  "recommendationSnapshotId": "token-sovereignty-v31-plan-b",
+  "productionProfile": {
+    "schemaVersion": "3.1",
+    "collaborationCadence": "balanced",
+    "developmentMode": "sequential",
+    "aspectMode": "landscape",
+    "assetStrategy": "hybrid",
+    "theme": "bold-signal-v2",
+    "motionPack": "editorial-explainer",
+    "outputMode": "deterministic",
+    "audioMode": "tts-reviewed"
+  },
+  "validReplies": [
+    "批准 CP1",
+    "请修改 CP1: <具体意见>",
+    "提出问题（不会自动批准）"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "web-video-presentation",
+  "private": true,
+  "version": "3.1.0-pilot",
+  "type": "module",
+  "description": "A click-driven 16:9 web presentation that looks like a video — Vite + React + TypeScript.",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "compile:spec": "node scripts/compile-video-spec.mjs",
+    "workflow": "node ../../../../scripts/workflow-control.mjs",
+    "workflow:status": "node ../../../../scripts/workflow-control.mjs status",
+    "qa:production": "node ../../../../qa/run-production-gates.mjs --root=. && node ../../../../scripts/workflow-control.mjs record-qa --root=.",
+    "check:spec": "node scripts/compile-video-spec.mjs --check",
+    "check:production": "node ../../../../scripts/workflow-control.mjs verify --action=render && node scripts/compile-video-spec.mjs --check --production",
+    "check:providers": "bash scripts/validate-provider-contract.sh",
+    "test:runtime": "npx tsx scripts/test-runtime.ts",
+    "lock:render": "node ../../../../scripts/workflow-control.mjs verify --action=render && node scripts/lock-render-environment.mjs",
+    "quality:base": "tsc --noEmit && node scripts/compile-video-spec.mjs --check && bash scripts/validate-provider-contract.sh && node scripts/test-runtime.ts",
+    "extract-narrations": "tsx scripts/extract-narrations.ts",
+    "synthesize-audio": "node ../../../../scripts/workflow-control.mjs verify --action=audio && bash scripts/synthesize-audio.sh"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/node": "^24.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.7.0",
+    "vite": "^6.0.0",
+    "yaml": "^2.8.0"
+  }
+}

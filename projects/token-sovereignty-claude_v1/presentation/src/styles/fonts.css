@@ -1,0 +1,43 @@
+/*
+ * V2.1 font policy
+ * ----------------
+ * Project font faces defined with local() sources for deterministic fallback
+ * across machines. Before production, add woff2 files to public/fonts and
+ * update @font-face with url() entries. Lock in fonts.manifest.json.
+ */
+
+@font-face {
+  font-family: "Project Display CN";
+  src: local("Noto Sans SC"), local("Source Han Sans SC"), local("PingFang SC");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Project Display EN";
+  src: local("Archivo Black"), local("Inter"), local("Helvetica Neue");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Project Body";
+  src: local("Space Grotesk"), local("Inter"), local("Noto Sans SC"), local("PingFang SC");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Project Mono";
+  src: local("JetBrains Mono"), local("SF Mono"), local("Cascadia Mono");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Fallback stacks — only used when Project faces completely fail. Light weight. */
+:root {
+  --font-draft-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --font-draft-serif: "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --font-draft-mono: "SFMono-Regular", "Cascadia Mono", "Liberation Mono", monospace;
+}

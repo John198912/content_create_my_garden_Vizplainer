@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "2.1",
+  "claims": [
+    {
+      "id": "claim-karp-cnbc-2026-07-01",
+      "kind": "fact",
+      "statement": "2026年7月1日，Palantir CEO Alex Karp在CNBC直播中开场说'Something has gone completely wrong'，批评AI行业的token计费模式",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-token-direction-wrong",
+      "kind": "claim",
+      "statement": "Karp的推论是：若AI声称创造巨大业务价值却只按token计费，计费单位与价值单位并未对齐；按用量收费不等于按价值收费",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-token-no-value",
+      "kind": "claim",
+      "statement": "Karp原话：按token计费导致企业嗑token浪费时间拿零价值，同时IP被拿走",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-wealth-tax",
+      "kind": "claim",
+      "statement": "Karp把当前AI服务模式批评为从亿万富翁开始、最终覆盖所有用户的不公平‘财富税’，并警告企业的IP、模型权重与核心价值可能失去控制",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-means-of-production",
+      "kind": "claim",
+      "statement": "客户核心诉求是确认自己拥有生产资料——谁控制模型、谁掌控参数权重、谁掌握企业价值",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-karp-four-questions",
+      "kind": "claim",
+      "statement": "AI行业重建信任需四问：谁拥有我的数据？数据存在哪？我的提示是否安全？是否传输给第三方？",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview"]
+    },
+    {
+      "id": "claim-personal-token-loss",
+      "kind": "relationship",
+      "statement": "个人用户同样遭遇token模式问题：付费获得一次结果，花钱买token额度，但判断逻辑和审美偏好等生产资料没有留存",
+      "priority": "L2",
+      "sourceIds": ["source-cnbc-interview", "source-article-analysis"]
+    },
+    {
+      "id": "claim-personal-wealth-tax",
+      "kind": "relationship",
+      "statement": "个人使用AI时确定获得一次服务，平台确定获得收入，并可能依据具体产品、账户设置与授权条款获得使用信号或改进数据；关键是交换边界是否透明，以及用户是否留下可迁移资产",
+      "priority": "L2",
+      "sourceIds": ["source-cnbc-interview", "source-article-analysis"]
+    },
+    {
+      "id": "claim-personal-means-of-production",
+      "kind": "relationship",
+      "statement": "个人的生产资料不是GPU，而是问题拆解方式、审美判断、反复验证过的prompt模板、对好内容的定义——这些散落在数百次AI对话记录里",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-personal-cant-answer-four",
+      "kind": "claim",
+      "statement": "Karp四问的答案因产品、版本、账户和设置而不同；如果用户必须翻遍条款仍无法确认，说明控制边界不够透明",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-foundation-model-absorption-risk",
+      "kind": "claim",
+      "statement": "基础模型从大规模公开与授权数据中学习统计模式并形成生成能力；规模化吸收与重组带来来源、授权、退出和追溯等治理风险，但风险不等于模型天然具有侵犯意图",
+      "priority": "L1",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-sharingan-effect",
+      "kind": "claim",
+      "statement": "‘写轮眼’是作者用于具象化高速模仿风险的修辞隐喻；AI降低了生成相似内容的成本，但相似、借鉴和侵权需要依据来源、实质相似和授权边界区分",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-originality-dilution",
+      "kind": "claim",
+      "statement": "生成工具降低批量仿写和复杂重组的成本，可能让原创归属更难辨认、作品价值被内容洪流稀释，并削弱原创激励",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-china-ai-regulatory-boundary",
+      "kind": "fact",
+      "statement": "中国《生成式人工智能服务管理暂行办法》对面向境内公众的生成式AI服务设置安全评估、算法备案与数据治理等边界",
+      "priority": "L3",
+      "sourceIds": ["source-china-genai-measures"]
+    },
+    {
+      "id": "claim-swiss-rejection",
+      "kind": "fact",
+      "statement": "公开调查报道显示，Palantir在瑞士七年间至少九次未获推进或遭回绝；瑞士军方一份20页报告建议考虑替代方案，并讨论美国法律管辖风险",
+      "priority": "L3",
+      "sourceIds": ["source-swiss-report"]
+    },
+    {
+      "id": "claim-global-sovereignty-tear",
+      "kind": "relationship",
+      "statement": "美国企业的模型控制诉求、中国生成式AI服务监管和瑞士对外部供应商的审慎背景不同，但共同显示国家、机构与企业正在重建AI控制边界",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview", "source-china-genai-measures", "source-swiss-report"]
+    },
+    {
+      "id": "claim-individual-bottom",
+      "kind": "claim",
+      "statement": "在AI控制权博弈中，个人通常信息更少、迁移成本更高且很少参与规则制定，因此议价能力相对较弱",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-principle-1-own-judgment",
+      "kind": "actionable-principle",
+      "statement": "原则一：你拥有你的判断标准。对应Karp控制权重即控制命运。AI能复制输出但复制不了判断过程——前提是你自己把它记下来了",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview", "source-article-analysis"]
+    },
+    {
+      "id": "claim-principle-2-local-assets",
+      "kind": "actionable-principle",
+      "statement": "原则二：你的知识资产不在平台服务器上。每次不错的对话存到本地，每个好用的prompt变成可复用模板",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview", "source-article-analysis"]
+    },
+    {
+      "id": "claim-principle-3-tool-switch",
+      "kind": "actionable-principle",
+      "statement": "原则三：你可以随时切换工具而不损失能力。判断标准、prompt模板、问题拆解方式、审美偏好跟着人走——工具可以换，这些东西跟着你",
+      "priority": "L1",
+      "sourceIds": ["source-cnbc-interview", "source-article-analysis"]
+    },
+    {
+      "id": "claim-start-saving-today",
+      "kind": "action",
+      "statement": "最简单起点：每次觉得这次对话还不错的时候存下来，不用整理不用分类先存。这个动作本身就是主权化的第一步",
+      "priority": "L2",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-three-layer-diagnosis",
+      "kind": "relationship",
+      "statement": "三层关系：计费与价值脱节是Karp的商业批评；知识被规模化吸收与重组是需要治理的机制；个人未留存可迁移能力资产是需要处理的风险",
+      "priority": "L1",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-same-logic-enterprise-individual",
+      "kind": "relationship",
+      "statement": "Karp四问从企业映射到个人时都指向控制权，但风险规模不同：公司需要可控生产资料，个人需要可迁移能力资产以降低平台锁定和替代风险",
+      "priority": "L1",
+      "sourceIds": ["source-article-analysis"]
+    },
+    {
+      "id": "claim-jig-is-up",
+      "kind": "quote",
+      "statement": "Karp访谈结尾说The jig is up（骗局曝光了）",
+      "priority": "L3",
+      "sourceIds": ["source-cnbc-interview"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-cnbc-interview",
+      "title": "Alex Karp CNBC Live Interview 2026-07-01",
+      "locator": "CNBC直播，2026年7月1日",
+      "type": "video-interview",
+      "verified": true
+    },
+    {
+      "id": "source-china-genai-measures",
+      "title": "生成式人工智能服务管理暂行办法",
+      "locator": "中国政府网，2023年7月13日公布",
+      "type": "government-regulation",
+      "verified": true
+    },
+    {
+      "id": "source-swiss-report",
+      "title": "How tenaciously Palantir courted Switzerland",
+      "locator": "Republik调查报道，2026年2月18日；瑞士军方20页报告由报道披露",
+      "type": "investigative-report",
+      "verified": true
+    },
+    {
+      "id": "source-article-analysis",
+      "title": "你每次用ChatGPT，都在交一笔看不见的税 — 原创分析与论证",
+      "locator": "slice-001-bilibili-video.md",
+      "type": "original-analysis",
+      "verified": false
+    }
+  ]
+}

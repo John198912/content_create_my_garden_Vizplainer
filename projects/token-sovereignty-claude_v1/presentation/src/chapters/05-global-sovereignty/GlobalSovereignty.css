@@ -1,0 +1,173 @@
+.gs-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content {
+  animation: step-fade-in 350ms var(--ease-quart) both;
+}
+@keyframes step-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gs-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+  max-width: 1600px;
+  width: 100%;
+}
+
+.gs-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─── title ─── */
+.gs-title {
+  font-family: var(--font-display-cn);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* ─── three signals ─── */
+.gs-three-signals {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gs-signal-card {
+  padding: 28px 32px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+.gs-signal-region {
+  align-self: center;
+  font-size: 18px;
+}
+.gs-signal-quote {
+  font-family: var(--font-display-cn);
+  font-size: 30px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.gs-signal-source {
+  font-size: 18px;
+  color: var(--text-mute);
+}
+.gs-three-conclusion {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ─── zoom out ─── */
+.gs-zoom-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.gs-zoom-question {
+  font-family: var(--font-display-cn);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ─── bottom card ─── */
+.gs-bottom-card {
+  padding: 36px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1000px;
+}
+.gs-bottom-items {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gs-bottom-item {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gs-x-mark {
+  color: var(--accent);
+  font-weight: 700;
+}
+.gs-bottom-line {
+  width: 80%;
+}
+.gs-bottom-footer {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ─── perspective ─── */
+.gs-perspective {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gs-karp-view,
+.gs-our-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-2);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 24px 40px;
+  min-width: 240px;
+}
+.gs-view-text {
+  font-family: var(--font-display-cn);
+  font-size: 36px;
+  color: var(--text-2);
+}
+.gs-view-text-accent {
+  font-family: var(--font-display-cn);
+  font-size: 40px;
+  color: var(--text);
+  font-weight: 700;
+}
+.gs-view-vs {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  color: var(--text-mute);
+}
+.gs-rent-line {
+  font-family: var(--font-display-cn);
+  font-size: 48px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* ─── ambient ─── */
+.gs-orb {
+  z-index: 0;
+}
