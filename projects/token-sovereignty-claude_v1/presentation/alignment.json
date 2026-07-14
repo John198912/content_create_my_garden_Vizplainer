@@ -1,9 +1,9 @@
 {
   "schemaVersion": "2.1",
   "language": "zh-CN",
-  "voice": "Tingting",
-  "provider": "macos-say",
-  "generatedAt": "2026-07-14T18:49:07.593Z",
+  "voice": "zh_female_yingyujiaoxue_uranus_bigtts",
+  "provider": "volcano-ark-seed-tts-2.0",
+  "generatedAt": "2026-07-14T19:10:04.868Z",
   "phrases": [
     {
       "phraseId": "phrase-01-opening-1",
@@ -11,422 +11,469 @@
       "chapterId": "01-opening",
       "step": 0,
       "startUs": 0,
-      "endUs": 11220000,
-      "text": "2026年7月1号，一个身家120多亿美元的科技CEO，坐在CNBC直播镜头前。"
+      "endUs": 8481915,
+      "text": "2026年7月1号，一个身家120多亿美元的科技CEO，坐在CNBC直播镜头前。",
+      "audioPath": "audio/01-opening/1.mp3"
     },
     {
       "phraseId": "phrase-01-opening-2",
       "segmentId": "01-opening-2",
       "chapterId": "01-opening",
       "step": 1,
-      "startUs": 11220000,
-      "endUs": 17655918,
-      "text": "开场第一句话: Something has gone completely wrong. 有些东西已经彻底跑"
+      "startUs": 8481915,
+      "endUs": 16108470,
+      "text": "开场第一句话: Something has gone completely wrong. 有些东西已经彻底跑",
+      "audioPath": "audio/01-opening/2.mp3"
     },
     {
       "phraseId": "phrase-01-opening-3",
       "segmentId": "01-opening-3",
       "chapterId": "01-opening",
       "step": 2,
-      "startUs": 17655918,
-      "endUs": 23788843,
-      "text": "他说企业花几百万买token，拿到零价值，自己的IP还被"
+      "startUs": 16108470,
+      "endUs": 22879665,
+      "text": "他说企业花几百万买token，拿到零价值，自己的IP还被",
+      "audioPath": "audio/01-opening/3.mp3"
     },
     {
       "phraseId": "phrase-01-opening-4",
       "segmentId": "01-opening-4",
       "chapterId": "01-opening",
       "step": 3,
-      "startUs": 23788843,
-      "endUs": 40702630,
-      "text": "主持人Becky Quick愣了两秒: 你听起来很愤怒。他回了四个字: 这是报道。另一个主持人Sorkin插了一句: Sounds like shade. 这听"
+      "startUs": 22879665,
+      "endUs": 36104940,
+      "text": "主持人Becky Quick愣了两秒: 你听起来很愤怒。他回了四个字: 这是报道。另一个主持人Sorkin插了一句: Sounds like shade. 这听",
+      "audioPath": "audio/01-opening/4.mp3"
     },
     {
       "phraseId": "phrase-01-opening-5",
       "segmentId": "01-opening-5",
       "chapterId": "01-opening",
       "step": 4,
-      "startUs": 40702630,
-      "endUs": 45078231,
-      "text": "这个人是Palantir的CEO，Alex Ka"
+      "startUs": 36104940,
+      "endUs": 40310055,
+      "text": "这个人是Palantir的CEO，Alex Ka",
+      "audioPath": "audio/01-opening/5.mp3"
     },
     {
       "phraseId": "phrase-01-opening-6",
       "segmentId": "01-opening-6",
       "chapterId": "01-opening",
       "step": 5,
-      "startUs": 45078231,
-      "endUs": 62328571,
-      "text": "在接下来20分钟的直播里，他说了很多CEO不会在电视上说的大实话。而这些话，跟你每次打开ChatGPT、Claude、任何AI工具的那一刻，有直接的"
+      "startUs": 40310055,
+      "endUs": 55297890,
+      "text": "在接下来20分钟的直播里，他说了很多CEO不会在电视上说的大实话。而这些话，跟你每次打开ChatGPT、Claude、任何AI工具的那一刻，有直接的",
+      "audioPath": "audio/01-opening/6.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-1",
       "segmentId": "02-karp-arguments-1",
       "chapterId": "02-karp-arguments",
       "step": 0,
-      "startUs": 62328571,
-      "endUs": 68880453,
-      "text": "我们先认真听一下，他到底说了什么。不只是金句，而是他的核心"
+      "startUs": 55297890,
+      "endUs": 61628445,
+      "text": "我们先认真听一下，他到底说了什么。不只是金句，而是他的核心",
+      "audioPath": "audio/02-karp-arguments/1.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-2",
       "segmentId": "02-karp-arguments-2",
       "chapterId": "02-karp-arguments",
       "step": 1,
-      "startUs": 68880453,
-      "endUs": 85405986,
-      "text": "Karp的原话: I am going to chillax and waste my time with tokens, I am gonna get no "
+      "startUs": 61628445,
+      "endUs": 69721560,
+      "text": "Karp的原话: I am going to chillax and waste my time with tokens, I am gonna get no ",
+      "audioPath": "audio/02-karp-arguments/2.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-3",
       "segmentId": "02-karp-arguments-3",
       "chapterId": "02-karp-arguments",
       "step": 2,
-      "startUs": 85405986,
-      "endUs": 90792970,
-      "text": "不只是在说贵。他是在指出这个计费模型的方向性"
+      "startUs": 69721560,
+      "endUs": 75818835,
+      "text": "不只是在说贵。他是在指出这个计费模型的方向性",
+      "audioPath": "audio/02-karp-arguments/3.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-4",
       "segmentId": "02-karp-arguments-4",
       "chapterId": "02-karp-arguments",
       "step": 3,
-      "startUs": 90792970,
-      "endUs": 100060589,
-      "text": "他说，如果AI真能帮企业一天赚一亿美元，服务商为什么只按token收费，而不是分3"
+      "startUs": 75818835,
+      "endUs": 85389390,
+      "text": "他说，如果AI真能帮企业一天赚一亿美元，服务商为什么只按token收费，而不是分3",
+      "audioPath": "audio/02-karp-arguments/4.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-5",
       "segmentId": "02-karp-arguments-5",
       "chapterId": "02-karp-arguments",
       "step": 4,
-      "startUs": 100060589,
-      "endUs": 112823446,
-      "text": "因为按token收费，本身就证明了这个产品无法定位价值。真正创造价值的东西，是按价值定价的。按用量收费，等于价值说"
+      "startUs": 85389390,
+      "endUs": 98407305,
+      "text": "因为按token收费，本身就证明了这个产品无法定位价值。真正创造价值的东西，是按价值定价的。按用量收费，等于价值说",
+      "audioPath": "audio/02-karp-arguments/5.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-6",
       "segmentId": "02-karp-arguments-6",
       "chapterId": "02-karp-arguments",
       "step": 5,
-      "startUs": 112823446,
-      "endUs": 131009206,
-      "text": "Karp说了一句很重的话: 当前的AI服务模式，是一种从亿万富翁开始、最终覆盖所有用户的不公平的财富税。企业支付token，换不来实际价值。自身的模型权重和核心"
+      "startUs": 98407305,
+      "endUs": 115131780,
+      "text": "Karp说了一句很重的话: 当前的AI服务模式，是一种从亿万富翁开始、最终覆盖所有用户的不公平的财富税。企业支付token，换不来实际价值。自身的模型权重和核心",
+      "audioPath": "audio/02-karp-arguments/6.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-7",
       "segmentId": "02-karp-arguments-7",
       "chapterId": "02-karp-arguments",
       "step": 6,
-      "startUs": 131009206,
-      "endUs": 144006666,
-      "text": "你注意这个词: 财富税。不是服务费。不是订阅费。是税。税的意思是什么？你必须交、无法讨价还价、而且你无法控制钱被怎"
+      "startUs": 115131780,
+      "endUs": 130586175,
+      "text": "你注意这个词: 财富税。不是服务费。不是订阅费。是税。税的意思是什么？你必须交、无法讨价还价、而且你无法控制钱被怎",
+      "audioPath": "audio/02-karp-arguments/7.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-8",
       "segmentId": "02-karp-arguments-8",
       "chapterId": "02-karp-arguments",
       "step": 7,
-      "startUs": 144006666,
-      "endUs": 163886122,
-      "text": "客户的核心诉求其实特别简单: They want to know they own the means of production. 他们想确认自己拥有生产资料"
+      "startUs": 130586175,
+      "endUs": 140571450,
+      "text": "客户的核心诉求其实特别简单: They want to know they own the means of production. 他们想确认自己拥有生产资料",
+      "audioPath": "audio/02-karp-arguments/8.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-9",
       "segmentId": "02-karp-arguments-9",
       "chapterId": "02-karp-arguments",
       "step": 8,
-      "startUs": 163886122,
-      "endUs": 178192471,
-      "text": "他说客户要求在三个问题上有完全的自主权: 谁控制模型？谁掌控参数权重？谁掌握对应的企业价值？这三个问题，缺一个都不能算"
+      "startUs": 140571450,
+      "endUs": 156440565,
+      "text": "他说客户要求在三个问题上有完全的自主权: 谁控制模型？谁掌控参数权重？谁掌握对应的企业价值？这三个问题，缺一个都不能算",
+      "audioPath": "audio/02-karp-arguments/9.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-10",
       "segmentId": "02-karp-arguments-10",
       "chapterId": "02-karp-arguments",
       "step": 9,
-      "startUs": 178192471,
-      "endUs": 195925442,
-      "text": "Karp提出的行业底线: 谁拥有我的数据？数据存在哪？我的提示是否安全？信息是否传输给第三方？注意，他不是在问AI公司。他是在问你: 你用AI的时候，能回答这四"
+      "startUs": 156440565,
+      "endUs": 173346480,
+      "text": "Karp提出的行业底线: 谁拥有我的数据？数据存在哪？我的提示是否安全？信息是否传输给第三方？注意，他不是在问AI公司。他是在问你: 你用AI的时候，能回答这四",
+      "audioPath": "audio/02-karp-arguments/10.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-11",
       "segmentId": "02-karp-arguments-11",
       "chapterId": "02-karp-arguments",
       "step": 10,
-      "startUs": 195925442,
-      "endUs": 215263356,
-      "text": "好。四个论点，串起来看。Token模式的方向性错误，导致企业在交一笔财富税。这笔税的真正代价不是钱，是生产资料被转移。而要重建信任，每个人需要能回答四个最基本的"
+      "startUs": 173346480,
+      "endUs": 192455595,
+      "text": "好。四个论点，串起来看。Token模式的方向性错误，导致企业在交一笔财富税。这笔税的真正代价不是钱，是生产资料被转移。而要重建信任，每个人需要能回答四个最基本的",
+      "audioPath": "audio/02-karp-arguments/11.mp3"
     },
     {
       "phraseId": "phrase-02-karp-arguments-12",
       "segmentId": "02-karp-arguments-12",
       "chapterId": "02-karp-arguments",
       "step": 11,
-      "startUs": 215263356,
-      "endUs": 221306349,
-      "text": "你是不是已经隐约感觉到: 这套逻辑，好像不只是对企业"
+      "startUs": 192455595,
+      "endUs": 198552870,
+      "text": "你是不是已经隐约感觉到: 这套逻辑，好像不只是对企业",
+      "audioPath": "audio/02-karp-arguments/12.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-1",
       "segmentId": "03-enterprise-to-individual-1",
       "chapterId": "03-enterprise-to-individual",
       "step": 0,
-      "startUs": 221306349,
-      "endUs": 242486803,
-      "text": "我们来做一件事。把Karp的四个论点，一个字一个字地，从企业换成你。第一个。Token模式偷走价值。你每次打开AI对话框，是不是在用一种按用量付费的模式？月费、"
+      "startUs": 198552870,
+      "endUs": 217869345,
+      "text": "我们来做一件事。把Karp的四个论点，一个字一个字地，从企业换成你。第一个。Token模式偷走价值。你每次打开AI对话框，是不是在用一种按用量付费的模式？月费、",
+      "audioPath": "audio/03-enterprise-to-individual/1.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-2",
       "segmentId": "03-enterprise-to-individual-2",
       "chapterId": "03-enterprise-to-individual",
       "step": 1,
-      "startUs": 242486803,
-      "endUs": 267870476,
-      "text": "但按Karp的逻辑: 按用量收费本身就说明产品无法定位价值。那你问自己一个问题: 每次AI帮你写完一段文案、写完一段代码、回答完一个问题之后，你手里多了什么？多"
+      "startUs": 217869345,
+      "endUs": 233323740,
+      "text": "但按Karp的逻辑: 按用量收费本身就说明产品无法定位价值。那你问自己一个问题: 每次AI帮你写完一段文案、写完一段代码、回答完一个问题之后，你手里多了什么？多",
+      "audioPath": "audio/03-enterprise-to-individual/2.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-3",
       "segmentId": "03-enterprise-to-individual-3",
       "chapterId": "03-enterprise-to-individual",
       "step": 2,
-      "startUs": 267870476,
-      "endUs": 287368299,
-      "text": "第二个。你在交财富税。你付费。你交出你的需求、你的思考逻辑、你的判断偏好。AI吸收了这些，变得更聪明、更懂你这类人。然后下一个人用同样的AI，得到了基于你贡献的"
+      "startUs": 233323740,
+      "endUs": 251940375,
+      "text": "第二个。你在交财富税。你付费。你交出你的需求、你的思考逻辑、你的判断偏好。AI吸收了这些，变得更聪明、更懂你这类人。然后下一个人用同样的AI，得到了基于你贡献的",
+      "audioPath": "audio/03-enterprise-to-individual/3.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-4",
       "segmentId": "03-enterprise-to-individual-4",
       "chapterId": "03-enterprise-to-individual",
       "step": 3,
-      "startUs": 287368299,
-      "endUs": 300575056,
-      "text": "你交了钱。还交了数据。你得到了一次服务。AI公司得到了训练数据、长期订阅收入、用户行为图谱。谁的财富在增值？谁在"
+      "startUs": 251940375,
+      "endUs": 266306130,
+      "text": "你交了钱。还交了数据。你得到了一次服务。AI公司得到了训练数据、长期订阅收入、用户行为图谱。谁的财富在增值？谁在",
+      "audioPath": "audio/03-enterprise-to-individual/4.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-5",
       "segmentId": "03-enterprise-to-individual-5",
       "chapterId": "03-enterprise-to-individual",
       "step": 4,
-      "startUs": 300575056,
-      "endUs": 328281133,
-      "text": "第三个。你的生产资料正在被转移。Karp说企业想确认: 谁控制模型？谁掌控权重？谁掌握企业价值？翻译成你: 谁控制你的prompt库？谁掌握你的创作模板？那些只"
+      "startUs": 266306130,
+      "endUs": 284352525,
+      "text": "第三个。你的生产资料正在被转移。Karp说企业想确认: 谁控制模型？谁掌控权重？谁掌握企业价值？翻译成你: 谁控制你的prompt库？谁掌握你的创作模板？那些只",
+      "audioPath": "audio/03-enterprise-to-individual/5.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-6",
       "segmentId": "03-enterprise-to-individual-6",
       "chapterId": "03-enterprise-to-individual",
       "step": 5,
-      "startUs": 328281133,
-      "endUs": 343472879,
-      "text": "你的生产资料不是GPU。是你的问题拆解方式，是你的审美判断，是你反复验证过的prompt模板，是你对好内容的定义。这些东西，现在在"
+      "startUs": 284352525,
+      "endUs": 298692360,
+      "text": "你的生产资料不是GPU。是你的问题拆解方式，是你的审美判断，是你反复验证过的prompt模板，是你对好内容的定义。这些东西，现在在",
+      "audioPath": "audio/03-enterprise-to-individual/6.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-7",
       "segmentId": "03-enterprise-to-individual-7",
       "chapterId": "03-enterprise-to-individual",
       "step": 6,
-      "startUs": 343472879,
-      "endUs": 361635555,
-      "text": "第四个。你能回答那四个问题吗？你用ChatGPT写的东西，数据归谁？OpenAI的服务器上存了什么？你的prompt被拿去训练下一个模型了吗？你输出的内容，会不"
+      "startUs": 298692360,
+      "endUs": 313446915,
+      "text": "第四个。你能回答那四个问题吗？你用ChatGPT写的东西，数据归谁？OpenAI的服务器上存了什么？你的prompt被拿去训练下一个模型了吗？你输出的内容，会不",
+      "audioPath": "audio/03-enterprise-to-individual/7.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-8",
       "segmentId": "03-enterprise-to-individual-8",
       "chapterId": "03-enterprise-to-individual",
       "step": 7,
-      "startUs": 361635555,
-      "endUs": 372102131,
-      "text": "你发现没有，你答不上来。我不是说你应该答得上来。我说的是: 答不上来这件事本身，就是问题的"
+      "startUs": 313446915,
+      "endUs": 323665470,
+      "text": "你发现没有，你答不上来。我不是说你应该答得上来。我说的是: 答不上来这件事本身，就是问题的",
+      "audioPath": "audio/03-enterprise-to-individual/8.mp3"
     },
     {
       "phraseId": "phrase-03-enterprise-to-individual-9",
       "segmentId": "03-enterprise-to-individual-9",
       "chapterId": "03-enterprise-to-individual",
       "step": 8,
-      "startUs": 372102131,
-      "endUs": 399128798,
-      "text": "这四个问题，从企业到个人，底层逻辑完全一样。只不过Karp的客户是CEO，你的客户是你自己。公司需要可控的生产资料才能竞争。你需要可控的能力资产才能不被替换。这"
+      "startUs": 323665470,
+      "endUs": 343163385,
+      "text": "这四个问题，从企业到个人，底层逻辑完全一样。只不过Karp的客户是CEO，你的客户是你自己。公司需要可控的生产资料才能竞争。你需要可控的能力资产才能不被替换。这",
+      "audioPath": "audio/03-enterprise-to-individual/9.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-1",
       "segmentId": "04-root-cause-1",
       "chapterId": "04-root-cause",
       "step": 0,
-      "startUs": 399128798,
-      "endUs": 425894059,
-      "text": "但是，这里有个更深的问题要讲。Karp批判的是商业模式。但商业模式只是表象。底层的底层是: 大模型的工作原理，决定了它天然具有侵犯性。大模型最基础的工作方式是什"
+      "startUs": 343163385,
+      "endUs": 359628660,
+      "text": "但是，这里有个更深的问题要讲。Karp批判的是商业模式。但商业模式只是表象。底层的底层是: 大模型的工作原理，决定了它天然具有侵犯性。大模型最基础的工作方式是什",
+      "audioPath": "audio/04-root-cause/1.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-2",
       "segmentId": "04-root-cause-2",
       "chapterId": "04-root-cause",
       "step": 1,
-      "startUs": 425894059,
-      "endUs": 437932245,
-      "text": "这意味着: 它对知识、技能的原创，天然具有吸收和再分配的本能。不是哪个公司坏。是这整件事的运作方式，就是"
+      "startUs": 359628660,
+      "endUs": 372231855,
+      "text": "这意味着: 它对知识、技能的原创，天然具有吸收和再分配的本能。不是哪个公司坏。是这整件事的运作方式，就是",
+      "audioPath": "audio/04-root-cause/2.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-3",
       "segmentId": "04-root-cause-3",
       "chapterId": "04-root-cause",
       "step": 2,
-      "startUs": 437932245,
-      "endUs": 456279864,
-      "text": "我管这个叫写轮眼状态。看过火影的知道: 写轮眼可以复制对手的任何招式。在AI推动的大加速时代，模仿抄袭被加速到了这种程度: 原创者可能都无法识别对方是不是跟自己"
+      "startUs": 372231855,
+      "endUs": 389604330,
+      "text": "我管这个叫写轮眼状态。看过火影的知道: 写轮眼可以复制对手的任何招式。在AI推动的大加速时代，模仿抄袭被加速到了这种程度: 原创者可能都无法识别对方是不是跟自己",
+      "audioPath": "audio/04-root-cause/3.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-4",
       "segmentId": "04-root-cause-4",
       "chapterId": "04-root-cause",
       "step": 3,
-      "startUs": 456279864,
-      "endUs": 461401088,
-      "text": "甚至可能反过来: 让人觉得是原创者在抄抄"
+      "startUs": 389604330,
+      "endUs": 395079525,
+      "text": "甚至可能反过来: 让人觉得是原创者在抄抄",
+      "audioPath": "audio/04-root-cause/4.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-5",
       "segmentId": "04-root-cause-5",
       "chapterId": "04-root-cause",
       "step": 4,
-      "startUs": 461401088,
-      "endUs": 482453877,
-      "text": "我自己做自媒体之后，最焦虑的就是这个问题。我写的文章，记录灵光一现的感受和思想。但不远的将来，模型可以高速采集网上所有内容，复刻、洗稿、复杂重组。生成的东西，可"
+      "startUs": 395079525,
+      "endUs": 412192800,
+      "text": "我自己做自媒体之后，最焦虑的就是这个问题。我写的文章，记录灵光一现的感受和思想。但不远的将来，模型可以高速采集网上所有内容，复刻、洗稿、复杂重组。生成的东西，可",
+      "audioPath": "audio/04-root-cause/5.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-6",
       "segmentId": "04-root-cause-6",
       "chapterId": "04-root-cause",
       "step": 5,
-      "startUs": 482453877,
-      "endUs": 506171700,
-      "text": "这对原创动力是根本性的打击。你的创造力产出的价值，在内容洪流里被稀释了。公司同理。原创的商业模式和产品，竞争对手可以近乎实时地学习复制。无法产生差异，就只能陷入"
+      "startUs": 412192800,
+      "endUs": 431275995,
+      "text": "这对原创动力是根本性的打击。你的创造力产出的价值，在内容洪流里被稀释了。公司同理。原创的商业模式和产品，竞争对手可以近乎实时地学习复制。无法产生差异，就只能陷入",
+      "audioPath": "audio/04-root-cause/6.mp3"
     },
     {
       "phraseId": "phrase-04-root-cause-7",
       "segmentId": "04-root-cause-7",
       "chapterId": "04-root-cause",
       "step": 6,
-      "startUs": 506171700,
-      "endUs": 523495963,
-      "text": "所以你看: Karp指出来的Token模式方向性错误，是症状。大模型天然侵犯性，是病因。而你的生产资料不在你手里，是诊断结论。不管你是公司还是一个人，诊断结论是"
+      "startUs": 431275995,
+      "endUs": 447974550,
+      "text": "所以你看: Karp指出来的Token模式方向性错误，是症状。大模型天然侵犯性，是病因。而你的生产资料不在你手里，是诊断结论。不管你是公司还是一个人，诊断结论是",
+      "audioPath": "audio/04-root-cause/7.mp3"
     },
     {
       "phraseId": "phrase-05-global-sovereignty-1",
       "segmentId": "05-global-sovereignty-1",
       "chapterId": "05-global-sovereignty",
       "step": 0,
-      "startUs": 523495963,
-      "endUs": 558532788,
-      "text": "再拉远一点。生产资料归谁这个问题，不只在商业层面，它正在全球尺度上同时发生。Karp在美国喊不要依赖别人的API，要拥有自己的生产资料的同一个时期，中国对面向公"
+      "startUs": 447974550,
+      "endUs": 465580305,
+      "text": "再拉远一点。生产资料归谁这个问题，不只在商业层面，它正在全球尺度上同时发生。Karp在美国喊不要依赖别人的API，要拥有自己的生产资料的同一个时期，中国对面向公",
+      "audioPath": "audio/05-global-sovereignty/1.mp3"
     },
     {
       "phraseId": "phrase-05-global-sovereignty-2",
       "segmentId": "05-global-sovereignty-2",
       "chapterId": "05-global-sovereignty",
       "step": 1,
-      "startUs": 558532788,
-      "endUs": 580630838,
-      "text": "但你有一个不得不面对的事实: 在这场博弈里，个人的位置在哪？最底层。信息更少。迁移成本更高。很少参与规则制定。我们聊过的这些生产资料: prompt模板、判断标"
+      "startUs": 465580305,
+      "endUs": 483393420,
+      "text": "但你有一个不得不面对的事实: 在这场博弈里，个人的位置在哪？最底层。信息更少。迁移成本更高。很少参与规则制定。我们聊过的这些生产资料: prompt模板、判断标",
+      "audioPath": "audio/05-global-sovereignty/2.mp3"
     },
     {
       "phraseId": "phrase-05-global-sovereignty-3",
       "segmentId": "05-global-sovereignty-3",
       "chapterId": "05-global-sovereignty",
       "step": 2,
-      "startUs": 580630838,
-      "endUs": 594265487,
-      "text": "Karp关心资本和企业，这是他站在那个位置的自然视角。但我们的立场不一样。我们关心的是每一个具体的人。尤其是那些还不知道自己正在交房租"
+      "startUs": 483393420,
+      "endUs": 498147975,
+      "text": "Karp关心资本和企业，这是他站在那个位置的自然视角。但我们的立场不一样。我们关心的是每一个具体的人。尤其是那些还不知道自己正在交房租",
+      "audioPath": "audio/05-global-sovereignty/3.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-1",
       "segmentId": "06-three-principles-1",
       "chapterId": "06-three-principles",
       "step": 0,
-      "startUs": 594265487,
-      "endUs": 629009841,
-      "text": "好。现在把Karp给CEO开的处方，翻译成个人版本。三个原则。这三个原则和Karp的四个论点，是一一对应的。原则一: 你拥有你的判断标准。对应Karp的: 控制"
+      "startUs": 498147975,
+      "endUs": 515287170,
+      "text": "好。现在把Karp给CEO开的处方，翻译成个人版本。三个原则。这三个原则和Karp的四个论点，是一一对应的。原则一: 你拥有你的判断标准。对应Karp的: 控制",
+      "audioPath": "audio/06-three-principles/1.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-2",
       "segmentId": "06-three-principles-2",
       "chapterId": "06-three-principles",
       "step": 1,
-      "startUs": 629009841,
-      "endUs": 636123582,
-      "text": "AI能复制你的输出，复制不了你的判断过程: 前提是你自己把它记下"
+      "startUs": 515287170,
+      "endUs": 523147005,
+      "text": "AI能复制你的输出，复制不了你的判断过程: 前提是你自己把它记下",
+      "audioPath": "audio/06-three-principles/2.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-3",
       "segmentId": "06-three-principles-3",
       "chapterId": "06-three-principles",
       "step": 2,
-      "startUs": 636123582,
-      "endUs": 652194013,
-      "text": "原则二: 你的知识资产不在平台服务器上。对应Karp的四问。每一次你觉得这次和AI的对话还不错的时候，把那场对话存到本地。每一个好用的prompt，变成可复用的"
+      "startUs": 523147005,
+      "endUs": 539223480,
+      "text": "原则二: 你的知识资产不在平台服务器上。对应Karp的四问。每一次你觉得这次和AI的对话还不错的时候，把那场对话存到本地。每一个好用的prompt，变成可复用的",
+      "audioPath": "audio/06-three-principles/3.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-4",
       "segmentId": "06-three-principles-4",
       "chapterId": "06-three-principles",
       "step": 3,
-      "startUs": 652194013,
-      "endUs": 660503219,
-      "text": "纯消耗和积累资产的区别: 前者结束后你少了一堆token，后者结束后你多了一个"
+      "startUs": 539223480,
+      "endUs": 548146035,
+      "text": "纯消耗和积累资产的区别: 前者结束后你少了一堆token，后者结束后你多了一个",
+      "audioPath": "audio/06-three-principles/4.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-5",
       "segmentId": "06-three-principles-5",
       "chapterId": "06-three-principles",
       "step": 4,
-      "startUs": 660503219,
-      "endUs": 685292743,
-      "text": "原则三: 你可以随时切换工具而不损失能力。对应Karp的: 生产资料不被转移。你的判断标准、prompt模板、问题拆解方式、审美偏好: 这些才是你的生产资料。它"
+      "startUs": 548146035,
+      "endUs": 565492590,
+      "text": "原则三: 你可以随时切换工具而不损失能力。对应Karp的: 生产资料不被转移。你的判断标准、prompt模板、问题拆解方式、审美偏好: 这些才是你的生产资料。它",
+      "audioPath": "audio/06-three-principles/5.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-6",
       "segmentId": "06-three-principles-6",
       "chapterId": "06-three-principles",
       "step": 5,
-      "startUs": 685292743,
-      "endUs": 703263627,
-      "text": "这三个原则不是在让你立刻去买GPU跑本地模型。不是那个意思。一个更简单的起点: 从今天开始，每一次觉得这次对话还不错，存下来。不用整理。不用分类。"
+      "startUs": 565492590,
+      "endUs": 581517225,
+      "text": "这三个原则不是在让你立刻去买GPU跑本地模型。不是那个意思。一个更简单的起点: 从今天开始，每一次觉得这次对话还不错，存下来。不用整理。不用分类。",
+      "audioPath": "audio/06-three-principles/6.mp3"
     },
     {
       "phraseId": "phrase-06-three-principles-7",
       "segmentId": "06-three-principles-7",
       "chapterId": "06-three-principles",
       "step": 6,
-      "startUs": 703263627,
-      "endUs": 714187255,
-      "text": "这个动作本身就是主权化的第一步。它意味着你开始意识到: 这次对话里，有我的痕迹。而这个我，值得被自己"
+      "startUs": 581517225,
+      "endUs": 592798500,
+      "text": "这个动作本身就是主权化的第一步。它意味着你开始意识到: 这次对话里，有我的痕迹。而这个我，值得被自己",
+      "audioPath": "audio/06-three-principles/7.mp3"
     },
     {
       "phraseId": "phrase-07-ending-1",
       "segmentId": "07-ending-1",
       "chapterId": "07-ending",
       "step": 0,
-      "startUs": 714187255,
-      "endUs": 719218910,
-      "text": "Karp在访谈最后说了一句话: The jig is up。骗局曝"
+      "startUs": 592798500,
+      "endUs": 599569695,
+      "text": "Karp在访谈最后说了一句话: The jig is up。骗局曝",
+      "audioPath": "audio/07-ending/1.mp3"
     },
     {
       "phraseId": "phrase-07-ending-2",
       "segmentId": "07-ending-2",
       "chapterId": "07-ending",
       "step": 1,
-      "startUs": 719218910,
-      "endUs": 749699001,
-      "text": "我说不准他的骗局具体指什么。但他提出的四个问题: 谁拥有数据、数据存在哪、提示是否安全、信息是否传输给第三方: 这些问题，不只是企业CEO需要答案。你每次打开A"
+      "startUs": 599569695,
+      "endUs": 616942170,
+      "text": "我说不准他的骗局具体指什么。但他提出的四个问题: 谁拥有数据、数据存在哪、提示是否安全、信息是否传输给第三方: 这些问题，不只是企业CEO需要答案。你每次打开A",
+      "audioPath": "audio/07-ending/2.mp3"
     },
     {
       "phraseId": "phrase-07-ending-3",
       "segmentId": "07-ending-3",
       "chapterId": "07-ending",
       "step": 2,
-      "startUs": 749699001,
-      "endUs": 773898729,
-      "text": "Karp那个卖药的人，把病历公开了。要不要给自己号个脉，是你的事。好，这就是今天的内容。在弹幕或评论区聊聊: 你目前用AI的方式，积累资产和纯消耗，哪种更多？这"
+      "startUs": 616942170,
+      "endUs": 633433365,
+      "text": "Karp那个卖药的人，把病历公开了。要不要给自己号个脉，是你的事。好，这就是今天的内容。在弹幕或评论区聊聊: 你目前用AI的方式，积累资产和纯消耗，哪种更多？这",
+      "audioPath": "audio/07-ending/3.mp3"
     }
   ]
 }
